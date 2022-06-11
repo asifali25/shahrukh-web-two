@@ -1,0 +1,1952 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #181818;
+}
+
+@font-face {
+  font-family: neuehaasblack;
+  src: url(/fonts/neuehaas_black.ttf);
+}
+
+@font-face {
+  font-family: neueRegular;
+  src: url(/fonts/neuehaas_regular.ttf);
+}
+
+@font-face {
+  font-family: neuehaasThin;
+  src: url(/fonts/neuehaas_thin.ttf);
+}
+
+@font-face {
+  font-family: neuehassLight;
+  src: url(/fonts/neuehaas_light.ttf);
+}
+
+@font-face {
+  font-family: neuehassBold;
+  src: url(/fonts/neuehaas_bold.ttf);
+}
+
+html {
+  font-family: neuehassLight;
+  font-size: 62.5%;
+}
+
+.backToHome {
+  margin-right: 85px;
+  grid-column: 3/5;
+  grid-row: 2/4;
+}
+
+.backToHome svg {
+  width: 100%;
+  height: 100%;
+  transform: rotate(180deg);
+  cursor: pointer;
+}
+
+.backText {
+  grid-column: 4/5;
+  grid-row: 2/3;
+  position: absolute;
+  top: 60px;
+  left: 27px;
+  font-size: 1rem;
+  letter-spacing: 3px;
+}
+
+.work-logo {
+  grid-column: 1 / 2;
+  grid-row: 1 / 2;
+  width: 80px;
+  align-self: center;
+  justify-self: end;
+  margin-top: 30px;
+  margin-left: 35px;
+  position: fixed;
+  cursor: pointer;
+  z-index: 5;
+}
+
+.work-logo svg {
+  width: 100%;
+  height: 100%;
+}
+
+.work-selected {
+  width: 100%;
+  height: 100vh;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: repeat(12, 1fr);
+  background-color: #181818;
+  position: absolute;
+  color: white;
+  top: 0;
+  transition: all 0.5s ease;
+  scroll-snap-align: start;
+  scroll-behavior: smooth;
+  overflow-y: hidden;
+  z-index: 4;
+}
+
+.work-selected-blur {
+  width: 100%;
+  height: 100vh;
+  position: absolute;
+  /* backdrop-filter: blur(20px); */
+  background-color: #181818;
+  z-index: 3;
+}
+
+.work-selected-blur.hide {
+  display: none;
+}
+
+.work-selected-main-image {
+  grid-column: 1/10;
+  grid-row: 2/12;
+}
+
+.work-selected-main-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.work-selected-main-text {
+  grid-column: 8/10;
+  grid-row: 11/12;
+  font-size: 4rem;
+}
+
+.work-selected-main-link {
+  grid-column: 8/10;
+  grid-row: 11/12;
+  text-decoration: none;
+  color: white;
+}
+
+.work-type {
+  grid-column: 1/3;
+  grid-row: 6/9;
+  width: 260px;
+  justify-self: center;
+}
+
+.packaging {
+  grid-column: 1/3;
+  font-size: 5rem;
+  font-family: neuehaasThin;
+}
+
+.editing {
+  grid-column: 1 /3;
+  grid-row: 9/10;
+  font-size: 5rem;
+  font-family: neuehaasThin;
+}
+
+.work3d {
+  grid-column: 1/3;
+  grid-row: 10/11;
+  font-size: 5rem;
+  font-family: neuehaasThin;
+}
+
+.work-display {
+  grid-column: 5/13;
+  grid-row: 4 /11;
+  position: relative;
+  /* background-color: red; */
+}
+
+.work-display-packaging {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  flex-direction: row;
+  position: absolute;
+  background-color: transparent;
+}
+
+.images {
+  position: relative;
+  margin: 10px;
+  width: 337px;
+  height: 260px;
+  overflow: hidden;
+  transition: all 0.5s ease;
+}
+
+.images:hover {
+  box-shadow: 0px 5px 100px rgba(248, 248, 248, 0.13),
+    0px 5px 30px rgba(248, 248, 248, 0.205);
+}
+
+.imageBox {
+  width: 337px;
+  height: 260px;
+  overflow: hidden;
+}
+
+.images:hover {
+  transform: scale(0.9);
+}
+
+.imageBox img {
+  transform: scale(1);
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
+  transition: all 0.5s ease;
+}
+
+.threeD img {
+  transition: all 0.5s ease;
+}
+
+.about-me {
+  grid-column: 12/13;
+  grid-row: 10/12;
+  justify-self: flex-end;
+  align-self: center;
+  height: min-content;
+  position: absolute;
+  top: 60px;
+  left: 0;
+}
+
+.about {
+  align-self: flex-end;
+  justify-self: flex-start;
+  color: white;
+  font-size: 2.5rem;
+  line-height: 0.5;
+  font-family: neuehaasThin;
+}
+.me {
+  color: white;
+  align-self: flex-start;
+  font-size: 8rem;
+  font-weight: bold;
+  line-height: 1;
+  font-family: neuehassLight;
+}
+
+.work-display-editing {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  display: none;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  flex-direction: row;
+  background-color: transparent;
+}
+
+.edit-video {
+  position: absolute;
+  width: 337px;
+  height: 260px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 0;
+  background-color: blue;
+  overflow: hidden;
+  transition: all 0.5s ease;
+  cursor: pointer;
+}
+
+.miniVideo {
+  width: 100%;
+  object-fit: cover;
+}
+
+.edit-video img {
+  width: 337px;
+  height: 260px;
+}
+
+.edit-video-icon {
+  z-index: 2;
+  position: absolute;
+  width: 100px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  cursor: pointer;
+}
+
+.myVideo {
+  position: absolute;
+  z-index: 18;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  object-fit: cover;
+  object-position: center;
+}
+
+.myVideo.hide {
+  display: none;
+}
+
+.clsBtn {
+  position: absolute;
+  top: 8%;
+  left: 80%;
+  transform: translate(-8%, -80%);
+  cursor: pointer;
+  z-index: 25;
+}
+
+.backDrop {
+  position: absolute;
+  backdrop-filter: blur(10px);
+  width: 1850px;
+  height: 825px;
+  z-index: 17;
+}
+
+.backDrop.hide {
+  display: none;
+}
+
+.clsBtn.hide {
+  display: none;
+}
+
+.fas {
+  font-size: 3.5rem;
+  text-align: center;
+  width: 100%;
+}
+
+.work-display-3dwork {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  display: none;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  flex-direction: row;
+  background-color: transparent;
+}
+
+.threeD {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 337px;
+  height: 0;
+  background-color: red;
+  transition: all 0.5s ease;
+  overflow: hidden;
+  z-index: 5;
+}
+
+.threeD img {
+  width: 337px;
+  height: 260px;
+}
+
+.tabs {
+  cursor: pointer;
+}
+
+.tabs.active {
+  font-weight: bold;
+}
+
+.displaBox.block {
+  display: flex;
+  animation-name: boxani;
+  animation-duration: 0.5s;
+}
+
+@keyframes boxani {
+  from {
+    transform: translateY(200px);
+  }
+
+  to {
+    transform: translateY(0);
+  }
+}
+
+.imgOverlay {
+  position: absolute;
+  z-index: 15;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  background-color: transparent;
+  opacity: 0;
+  transition: all 0.8s ease;
+  cursor: pointer;
+}
+
+.imgOverlay-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: transparent;
+  cursor: pointer;
+  border-radius: 50px;
+}
+
+.threeD:hover img {
+  transform: scale(1.5);
+}
+
+.threeD:hover .imgOverlay {
+  top: 0;
+  opacity: 1;
+}
+
+.imgOverlay-text svg {
+  margin: 10px;
+}
+
+.imageBox:hover img {
+  transform: scale(1.5);
+}
+
+.imageBox:hover .imgOverlay {
+  top: 0;
+  opacity: 1;
+}
+
+/* .work-fullDisplay {
+    position: absolute;  
+    width: calc(100%);
+    height: calc(100% - 40px);
+    right: 0;
+    background-color:red;
+    z-index: 16;
+    display: flex;    
+    overflow: hidden;
+  } */
+
+.workSlide {
+  height: 100vh;
+  /* margin-left: 70px;   */
+  display: grid;
+  grid-template-columns: auto auto auto auto auto auto auto;
+  transition: all 2s ease;
+}
+
+.work-fullDisplay {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 20px;
+  background-color: #181818;
+  z-index: 17;
+  display: grid;
+  grid-template-columns: auto auto auto auto auto auto auto;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  scroll-behavior: smooth;
+  transition: all 0.9s ease;
+  scroll-snap-type: block;
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+.work-fullDisplay-aboutCom {
+  /* position: absolute; */
+  z-index: 17;
+  color: white;
+  /* bottom: 0; */
+  /* left: 350px; */
+  font-size: 1.8rem;
+  line-height: 1.8;
+  font-family: neuehassLight;
+}
+
+.work-fullDisplay-aboutWork {
+  position: absolute;
+  z-index: 17;
+  width: 700px;
+  height: 100%;
+  left: 1475px;
+  background-color: rgba(2, 2, 2, 0.733);
+}
+
+.work-fullDisplay-aboutWork h1 {
+  font-size: 3rem;
+  width: 80%;
+  margin: 25px auto;
+}
+
+.work-fullDisplay-aboutWork p {
+  font-size: 1.5rem;
+  text-align: justify;
+  width: 80%;
+  margin: 0 auto;
+}
+
+.work-fullDisplay-img {
+  /* position: absolute; */
+  /* width: 90%;
+    height: 90%; */
+  width: 1500px;
+  height: 800px;
+  right: 0;
+  /* border: 2px solid #181818;   */
+  /* scroll-snap-align: start; */
+}
+
+.work-full-image {
+  height: 100vh;
+}
+
+.work-Client-Details {
+  position: absolute;
+  bottom: 52px;
+  left: 300px;
+  font-size: 1.6rem;
+  line-height: 1.7;
+  font-family: neuehassLight;
+}
+
+.full-text {
+  width: 500px;
+  height: 650px;
+}
+
+.challange-Heading {
+  font-size: 3rem;
+  font-family: neuehassLight;
+  padding-top: 50px;
+  padding-left: 35px;
+}
+
+.challange-text {
+  font-size: 1.3rem;
+  padding-left: 35px;
+  padding-right: 35px;
+  text-align: justify;
+  font-family: neuehassLight;
+}
+
+.challenge {
+  width: 10px;
+}
+
+.work-fullDisplay-img-microlyscs {
+  width: 1500px;
+  height: 800px;
+  right: 0;
+  border: 2px solid #181818;
+}
+
+.work-fullDisplay-img-protiGum {
+  position: absolute;
+  width: 90%;
+  height: 90%;
+  right: 0;
+  border: 2px solid black;
+}
+
+.work-fullDisplay-img-sunrise {
+  position: absolute;
+  width: 90%;
+  height: 90%;
+  right: 0;
+  border: 2px solid black;
+}
+
+.work-fullDisplay-img-vestapet {
+  position: absolute;
+  width: 90%;
+  height: 90%;
+  right: 0;
+  border: 2px solid black;
+}
+
+.work-fullDisplay-img-vestapet img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.work-fullDisplay-img-sunrise img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.work-fullDisplay-img-protiGum img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.work-fullDisplay-img-microlyscs img {
+  width: 100%;
+  height: 100%;
+  object-fit: unset;
+  object-position: center;
+}
+
+.work-fullDisplay-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.workBtn {
+  display: none;
+}
+
+.work-fullDisplay-arrow {
+  position: absolute;
+  left: -25px;
+  top: 180px;
+  width: 250px;
+  height: 150px;
+  grid-column: 1/3;
+  grid-row: 1 / 2;
+  z-index: 18;
+  transform: rotateY(180deg);
+  cursor: pointer;
+}
+
+.work-fullDisplay-arrow svg {
+  width: 100%;
+  height: 100%;
+}
+
+.work-fullDisplay-arrow-text {
+  position: absolute;
+  font-size: 1rem;
+  color: white;
+  top: 57px;
+  left: 25px;
+  transform: rotateY(180deg);
+  letter-spacing: 2.5px;
+}
+
+.work-fullDisplay.hide {
+  display: none;
+}
+
+.work-light-Arrow {
+  grid-column: 10 / 12;
+  grid-row: 10 /12;
+  justify-self: center;
+  width: 200px;
+  height: 150px;
+  animation-name: arrowSlider;
+  animation-duration: 2s;
+  margin-left: 70px;
+}
+
+@keyframes arrowSlider {
+  from {
+    transform: translateX(-1600px);
+  }
+
+  to {
+    transform: translateX(0);
+  }
+}
+
+.work-light-Arrow svg {
+  width: 100%;
+  height: 100%;
+}
+
+.work-next {
+  color: white;
+  letter-spacing: 2.5px;
+  font-size: 1.5rem;
+  grid-column: 10/11;
+  grid-row: 10/11;
+  justify-self: start;
+  width: 45px;
+  height: 20px;
+  margin-top: 50px;
+  margin-left: 87px;
+  animation-name: nextAnim;
+  animation-duration: 2s;
+  animation-delay: 2s;
+  opacity: 0;
+  animation-fill-mode: forwards;
+}
+
+@keyframes nextAnim {
+  from {
+    transform: translateY(10px);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@media screen and (min-width: 1080px) and (max-width: 1280px) {
+  .work-type {
+    grid-column: 1/3;
+    grid-row: 8/11;
+    width: 190px;
+    justify-self: center;
+  }
+
+  .packaging {
+    grid-column: 1/3;
+    font-size: 4rem;
+    font-family: neuehaasThin;
+    padding-left: 10px;
+  }
+
+  .editing {
+    grid-column: 1 /3;
+    grid-row: 9/10;
+    font-size: 4rem;
+    font-family: neuehaasThin;
+    padding-left: 10px;
+  }
+
+  .work3d {
+    grid-column: 1/3;
+    grid-row: 10/11;
+    font-size: 4rem;
+    font-family: neuehaasThin;
+    padding-left: 10px;
+  }
+
+  .work-display {
+    grid-column: 3/11;
+    grid-row: 3 /11;
+    position: relative;
+  }
+
+  .work-display-packaging {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    flex-direction: row;
+    position: absolute;
+  }
+
+  .images {
+    position: relative;
+    margin: 10px;
+    width: 300px;
+    height: 200px;
+    overflow: hidden;
+  }
+
+  .images:hover {
+    box-shadow: 0px 5px 100px rgba(248, 248, 248, 0.13),
+      0px 5px 30px rgba(248, 248, 248, 0.205);
+  }
+
+  .imageBox {
+    width: 300px;
+    height: 200px;
+    overflow: hidden;
+  }
+
+  .imageBox img {
+    transform: scale(1);
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+    transition: all 0.5s ease;
+  }
+
+  .work-light-Arrow {
+    grid-column: 10 / 12;
+    grid-row: 9 /11;
+    justify-self: center;
+    width: 200px;
+    height: 150px;
+    animation-name: arrowSlider;
+    animation-duration: 2s;
+    margin-left: 70px;
+  }
+
+  .work-next {
+    color: white;
+    letter-spacing: 2.5px;
+    font-size: 1.5rem;
+    grid-column: 10/11;
+    grid-row: 9/10;
+    justify-self: start;
+    width: 45px;
+    height: 20px;
+    margin-top: 50px;
+    margin-right: 35px;
+    animation-name: nextAnim;
+    animation-duration: 2s;
+    animation-delay: 2s;
+    opacity: 0;
+    animation-fill-mode: forwards;
+  }
+
+  @keyframes nextAnim {
+    from {
+      transform: translateY(10px);
+      opacity: 0;
+    }
+
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+
+  .about-me {
+    grid-column: 12/13;
+    grid-row: 9/11;
+    justify-self: flex-end;
+    align-self: center;
+    height: min-content;
+    position: absolute;
+    top: 60px;
+    left: 0;
+  }
+
+  .about {
+    align-self: flex-end;
+    justify-self: flex-start;
+    color: white;
+    font-size: 2.5rem;
+    line-height: 0.5;
+    font-family: neuehaasThin;
+  }
+  .me {
+    color: white;
+    align-self: flex-start;
+    font-size: 8rem;
+    font-weight: bold;
+    line-height: 1;
+    font-family: neuehassLight;
+  }
+
+  .myVideo {
+    width: 90%;
+  }
+}
+
+@media screen and (min-width: 1281px) and (max-width: 1366px) {
+  .work-type {
+    grid-column: 1/3;
+    grid-row: 7/10;
+    width: 190px;
+    justify-self: center;
+  }
+
+  .packaging {
+    grid-column: 1/3;
+    font-size: 4rem;
+    font-family: neuehaasThin;
+    padding-left: 10px;
+  }
+
+  .editing {
+    grid-column: 1 /3;
+    grid-row: 9/10;
+    font-size: 4rem;
+    font-family: neuehaasThin;
+    padding-left: 10px;
+  }
+
+  .work3d {
+    grid-column: 1/3;
+    grid-row: 10/11;
+    font-size: 4rem;
+    font-family: neuehaasThin;
+    padding-left: 10px;
+  }
+
+  .work-display {
+    grid-column: 3/12;
+    grid-row: 3 /11;
+    position: relative;
+  }
+
+  .work-display-packaging {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    flex-direction: row;
+    position: absolute;
+  }
+
+  .images {
+    position: relative;
+    margin: 10px;
+    width: 265px;
+    height: 205px;
+    overflow: hidden;
+    transition: all 05s ease;
+  }
+
+  .images:hover {
+    box-shadow: 0px 5px 100px rgba(248, 248, 248, 0.13),
+      0px 5px 30px rgba(248, 248, 248, 0.205);
+  }
+
+  .imageBox {
+    width: 265px;
+    height: 205px;
+    overflow: hidden;
+  }
+
+  .imageBox img {
+    transform: scale(1);
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+    transition: all 0.5s ease;
+  }
+
+  .work-light-Arrow {
+    grid-column: 10 / 12;
+    grid-row: 9 /11;
+    justify-self: center;
+    width: 180px;
+    height: 130px;
+    animation-name: arrowSlider;
+    animation-duration: 2s;
+    margin-left: 70px;
+  }
+
+  .work-next {
+    position: absolute;
+    color: white;
+    letter-spacing: 2.5px;
+    font-size: 1.3rem;
+    grid-column: 10/11;
+    grid-row: 9/10;
+    justify-self: center;
+    width: 45px;
+    height: 20px;
+    bottom: 0px;
+    right: 6px;
+    animation-name: nextAnim;
+    animation-duration: 2s;
+    animation-delay: 2s;
+    opacity: 0;
+    animation-fill-mode: forwards;
+  }
+
+  @keyframes nextAnim {
+    from {
+      transform: translateY(10px);
+      opacity: 0;
+    }
+
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+
+  .about-me {
+    grid-column: 12/13;
+    grid-row: 9/11;
+    justify-self: flex-end;
+    align-self: center;
+    height: min-content;
+    position: absolute;
+    top: 50px;
+    left: 0;
+  }
+
+  .about {
+    align-self: flex-end;
+    justify-self: center;
+    color: white;
+    font-size: 2.5rem;
+    line-height: 0.5;
+    margin-left: 5px;
+    font-family: neuehaasThin;
+  }
+  .me {
+    color: white;
+    align-self: flex-start;
+    font-size: 8rem;
+    font-weight: bold;
+    line-height: 1;
+    font-family: neuehassLight;
+  }
+
+  .myVideo {
+    width: 90%;
+    height: 80%;
+  }
+}
+
+@media screen and (min-width: 1367px) and (max-width: 1600px) {
+  .work-type {
+    grid-column: 1/3;
+    grid-row: 7/10;
+    width: 230px;
+    justify-self: center;
+  }
+
+  .packaging {
+    grid-column: 1/3;
+    font-size: 4.5rem;
+    font-family: neuehaasThin;
+    padding-left: 10px;
+  }
+
+  .editing {
+    grid-column: 1 /3;
+    grid-row: 9/10;
+    font-size: 4.5rem;
+    font-family: neuehaasThin;
+    padding-left: 10px;
+  }
+
+  .work3d {
+    grid-column: 1/3;
+    grid-row: 10/11;
+    font-size: 4rem;
+    font-family: neuehaasThin;
+    padding-left: 10px;
+  }
+
+  .work-display {
+    grid-column: 3/10;
+    grid-row: 3 /11;
+    position: relative;
+  }
+
+  .work-display-packaging {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    flex-direction: row;
+    position: absolute;
+  }
+
+  .images {
+    position: relative;
+    margin: 10px;
+    width: 275px;
+    height: 238px;
+    overflow: hidden;
+  }
+
+  .images:hover {
+    box-shadow: 0px 5px 100px rgba(248, 248, 248, 0.13),
+      0px 5px 30px rgba(248, 248, 248, 0.205);
+  }
+
+  .imageBox {
+    width: 275px;
+    height: 238px;
+    overflow: hidden;
+  }
+
+  .imageBox img {
+    transform: scale(1);
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+    transition: all 0.5s ease;
+  }
+
+  .work-light-Arrow {
+    grid-column: 10 / 12;
+    grid-row: 9 /11;
+    justify-self: center;
+    width: 180px;
+    height: 130px;
+    animation-name: arrowSlider;
+    animation-duration: 2s;
+    margin-left: 70px;
+  }
+
+  .work-next {
+    position: absolute;
+    color: white;
+    letter-spacing: 2.5px;
+    font-size: 1.3rem;
+    grid-column: 10/11;
+    grid-row: 9/10;
+    justify-self: center;
+    width: 45px;
+    height: 20px;
+    bottom: 0px;
+    right: 6px;
+    animation-name: nextAnim;
+    animation-duration: 2s;
+    animation-delay: 2s;
+    opacity: 0;
+    animation-fill-mode: forwards;
+  }
+
+  @keyframes nextAnim {
+    from {
+      transform: translateY(10px);
+      opacity: 0;
+    }
+
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+
+  .about-me {
+    grid-column: 12/13;
+    grid-row: 9/11;
+    justify-self: flex-end;
+    align-self: center;
+    height: min-content;
+    position: absolute;
+    top: 50px;
+    left: 0;
+  }
+
+  .about {
+    align-self: flex-end;
+    justify-self: center;
+    color: white;
+    font-size: 2.5rem;
+    line-height: 0.5;
+    margin-left: 5px;
+    font-family: neuehaasThin;
+  }
+  .me {
+    color: white;
+    align-self: flex-start;
+    font-size: 8rem;
+    font-weight: bold;
+    line-height: 1;
+    font-family: neuehassLight;
+  }
+  .myVideo {
+    width: 90%;
+    height: 80%;
+  }
+}
+
+@media screen and (min-width: 1921px) and (max-width: 2560px) {
+  .backToHome {
+    grid-column: 2/4;
+    grid-row: 1/3;
+    margin-top: 30px;
+  }
+
+  .backToHome svg {
+    width: 90%;
+    height: 90%;
+    transform: rotate(180deg);
+    cursor: pointer;
+  }
+
+  .backText {
+    grid-column: 2/3;
+    grid-row: 1/2;
+    position: absolute;
+    top: 95px;
+    left: 215px;
+    font-size: 1.8rem;
+    letter-spacing: 5px;
+  }
+
+  .work-logo {
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+    width: 120px;
+    align-self: center;
+    justify-self: end;
+    margin-top: 30px;
+    margin-left: 40px;
+    position: fixed;
+    cursor: pointer;
+  }
+
+  .work-logo svg {
+    width: 100%;
+    height: 100%;
+  }
+
+  .work-fullDisplay {
+    position: absolute;
+    height: 100vh;
+    top: 0;
+    left: 20px;
+    background-color: #181818;
+    z-index: 17;
+    display: grid;
+    grid-template-columns: auto auto auto auto auto auto auto;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    scroll-behavior: smooth;
+    transition: all 0.9s ease;
+    scroll-snap-type: block;
+  }
+
+  .work-fullDisplay-img {
+    /* position: absolute; */
+    /* width: 90%;
+    height: 90%; */
+    width: 1800px;
+    height: 1100px;
+    right: 0;
+    /* border: 2px solid #181818;   */
+    /* scroll-snap-align: start; */
+  }
+
+  .work-fullDisplay-img img {
+    object-fit: cover;
+    object-position: center;
+  }
+
+  .work-full-image {
+    width: 2500px;
+    height: 100vh;
+  }
+
+  .work-full-image img {
+    object-fit: cover;
+    object-position: center;
+  }
+
+  .full-text {
+    width: 700px;
+    height: 650px;
+  }
+
+  .challange-Heading {
+    font-size: 5rem;
+    font-family: neuehassLight;
+    padding-top: 50px;
+    padding-left: 35px;
+  }
+
+  .challange-text {
+    font-size: 2rem;
+    padding-left: 35px;
+    padding-right: 35px;
+    text-align: justify;
+    font-family: neuehassLight;
+  }
+
+  .challenge {
+    width: 10px;
+  }
+
+  .work-Client-Details {
+    position: absolute;
+    bottom: 205px;
+    left: 300px;
+    font-size: 2.5rem;
+    line-height: 1.7;
+    font-family: neuehassLight;
+  }
+
+  .work-type {
+    grid-column: 1/3;
+    grid-row: 7/10;
+    width: 400px;
+    justify-self: center;
+  }
+
+  .packaging {
+    grid-column: 1/3;
+    font-size: 7.5rem;
+    font-family: neuehaasThin;
+    padding-left: 10px;
+  }
+
+  .editing {
+    grid-column: 1 /3;
+    grid-row: 9/10;
+    font-size: 7.5rem;
+    font-family: neuehaasThin;
+    padding-left: 10px;
+  }
+
+  .work3d {
+    grid-column: 1/3;
+    grid-row: 10/11;
+    font-size: 7.5rem;
+    font-family: neuehaasThin;
+    padding-left: 10px;
+  }
+
+  .work-display {
+    grid-column: 3/10;
+    grid-row: 3 /10;
+    position: relative;
+    /* background-color: red; */
+  }
+
+  .work-display-packaging {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    flex-direction: row;
+    position: absolute;
+    background-color: transparent;
+  }
+
+  .images {
+    position: relative;
+    margin: 10px;
+    width: 460px;
+    height: 415px;
+    overflow: hidden;
+  }
+
+  .images:hover {
+    box-shadow: 0px 5px 100px rgba(248, 248, 248, 0.13),
+      0px 5px 30px rgba(248, 248, 248, 0.205);
+  }
+
+  .imageBox {
+    width: 460px;
+    height: 415px;
+    overflow: hidden;
+  }
+
+  .imageBox img {
+    transform: scale(1);
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+    transition: all 0.5s ease;
+  }
+
+  .edit-video {
+    position: absolute;
+    width: 460px;
+    height: 415px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 0;
+    background-color: blue;
+    overflow: hidden;
+    transition: all 0.5s ease;
+    cursor: pointer;
+  }
+
+  .miniVideo {
+    width: 460px;
+    height: 415px;
+    object-fit: cover;
+  }
+
+  .edit-video img {
+    width: 460px;
+    height: 415px;
+  }
+
+  .threeD {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 460px;
+    height: 0;
+    background-color: red;
+    transition: all 0.5s ease;
+    overflow: hidden;
+    z-index: 5;
+  }
+
+  .threeD img {
+    width: 460px;
+    height: 415px;
+  }
+
+  .work-light-Arrow {
+    grid-column: 10 / 12;
+    grid-row: 9 /11;
+    justify-self: flex-end;
+    align-self: center;
+    width: 250px;
+    height: 190px;
+    animation-name: arrowSlider;
+    animation-duration: 2s;
+    margin-right: 20px;
+  }
+
+  @keyframes arrowSlider {
+    from {
+      transform: translateX(-1600px);
+    }
+
+    to {
+      transform: translateX(0);
+    }
+  }
+
+  .work-light-Arrow svg {
+    width: 100%;
+    height: 100%;
+  }
+
+  .work-next {
+    color: white;
+    letter-spacing: 2.5px;
+    font-size: 2rem;
+    grid-column: 10/11;
+    grid-row: 9/10;
+    justify-self: flex-end;
+    align-self: flex-end;
+    width: 45px;
+    height: 20px;
+    margin-right: 18px;
+    margin-bottom: 10px;
+    animation-name: nextAnim;
+    animation-duration: 2s;
+    animation-delay: 2s;
+    opacity: 0;
+    animation-fill-mode: forwards;
+  }
+
+  @keyframes nextAnim {
+    from {
+      transform: translateY(10px);
+      opacity: 0;
+    }
+
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+
+  .about-me {
+    grid-column: 12/13;
+    grid-row: 9/11;
+    justify-self: flex-end;
+    align-self: center;
+    height: min-content;
+    margin-top: 30px;
+  }
+
+  .about {
+    align-self: flex-end;
+    color: white;
+    font-size: 4.5rem;
+    line-height: 0.5;
+    font-family: neuehaasThin;
+  }
+  .me {
+    color: white;
+    align-self: flex-start;
+    font-size: 11rem;
+    font-weight: bold;
+    line-height: 1;
+    font-family: neuehassLight;
+  }
+
+  .myVideo {
+    width: 90%;
+    height: 80%;
+  }
+
+  .backDrop {
+    position: absolute;
+    backdrop-filter: blur(10px);
+    width: 100%;
+    height: 100%;
+    z-index: 17;
+  }
+
+  .clsBtn {
+    position: absolute;
+    top: 8%;
+    left: 90%;
+    transform: translate(-8%, -80%);
+    cursor: pointer;
+    z-index: 18;
+  }
+}
+
+@media screen and (min-width: 2561px) and (max-width: 3440px) {
+  .work-type {
+    grid-column: 1/3;
+    grid-row: 7/10;
+    width: 400px;
+    justify-self: center;
+  }
+
+  .packaging {
+    grid-column: 1/3;
+    font-size: 8rem;
+    font-family: neuehaasThin;
+    padding-left: 10px;
+  }
+
+  .editing {
+    grid-column: 1 /3;
+    grid-row: 9/10;
+    font-size: 8rem;
+    font-family: neuehaasThin;
+    padding-left: 10px;
+  }
+
+  .work3d {
+    grid-column: 1/3;
+    grid-row: 10/11;
+    font-size: 8rem;
+    font-family: neuehaasThin;
+    padding-left: 10px;
+  }
+
+  .work-display {
+    grid-column: 3/10;
+    grid-row: 3 /11;
+    position: relative;
+  }
+
+  .work-display-packaging {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    flex-direction: row;
+    position: absolute;
+    background-color: transparent;
+  }
+
+  .images {
+    position: relative;
+    margin: 10px;
+    width: 460px;
+    height: 415px;
+    overflow: hidden;
+  }
+
+  .images:hover {
+    box-shadow: 0px 5px 100px rgba(248, 248, 248, 0.13),
+      0px 5px 30px rgba(248, 248, 248, 0.205);
+  }
+
+  .imageBox {
+    width: 460px;
+    height: 415px;
+    overflow: hidden;
+  }
+
+  .imageBox img {
+    transform: scale(1);
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+    transition: all 0.5s ease;
+  }
+
+  .edit-video {
+    position: absolute;
+    width: 460px;
+    height: 415px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 0;
+    background-color: blue;
+    overflow: hidden;
+    transition: all 0.5s ease;
+    cursor: pointer;
+  }
+
+  .miniVideo {
+    width: 460px;
+    height: 415px;
+    object-fit: cover;
+  }
+
+  .edit-video img {
+    width: 460px;
+    height: 415px;
+  }
+
+  .threeD {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 460px;
+    height: 0;
+    transition: all 0.5s ease;
+    overflow: hidden;
+    z-index: 5;
+  }
+
+  .threeD img {
+    width: 460px;
+    height: 415px;
+  }
+
+  .work-light-Arrow {
+    grid-column: 10 / 12;
+    grid-row: 9 /11;
+    justify-self: flex-end;
+    align-self: center;
+    width: 300px;
+    height: 220px;
+    animation-name: arrowSlider;
+    animation-duration: 2s;
+    margin-right: 20px;
+  }
+
+  @keyframes arrowSlider {
+    from {
+      transform: translateX(-1600px);
+    }
+
+    to {
+      transform: translateX(0);
+    }
+  }
+
+  .work-light-Arrow svg {
+    width: 100%;
+    height: 100%;
+  }
+
+  .work-next {
+    color: white;
+    letter-spacing: 2.5px;
+    font-size: 2rem;
+    grid-column: 10/12;
+    grid-row: 9/10;
+    justify-self: flex-end;
+    align-self: flex-end;
+    width: 45px;
+    height: 20px;
+    margin-right: 270px;
+    margin-bottom: 12px;
+    animation-name: nextAnim;
+    animation-duration: 2s;
+    animation-delay: 2s;
+    opacity: 0;
+    animation-fill-mode: forwards;
+  }
+
+  @keyframes nextAnim {
+    from {
+      transform: translateY(10px);
+      opacity: 0;
+    }
+
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+
+  .about-me {
+    grid-column: 12/13;
+    grid-row: 9/11;
+    justify-self: flex-end;
+    align-self: center;
+    height: min-content;
+    margin-top: 30px;
+  }
+
+  .about {
+    align-self: flex-end;
+    color: white;
+    font-size: 5rem;
+    line-height: 0.5;
+    font-family: neuehaasThin;
+  }
+  .me {
+    color: white;
+    align-self: flex-start;
+    font-size: 13rem;
+    font-weight: bold;
+    line-height: 1;
+    font-family: neuehassLight;
+  }
+
+  .myVideo {
+    width: 90%;
+    height: 80%;
+  }
+
+  .backDrop {
+    position: absolute;
+    background-color: black;
+    width: 100%;
+    height: 100%;
+    z-index: 17;
+  }
+
+  .clsBtn {
+    position: absolute;
+    top: 8%;
+    left: 90%;
+    transform: translate(-8%, -80%);
+    cursor: pointer;
+    z-index: 18;
+  }
+}
+
+@media screen and (min-width: 3441px) and (max-width: 3840px) {
+  .work-type {
+    grid-column: 1/3;
+    grid-row: 7/10;
+    width: 550px;
+    justify-self: center;
+  }
+
+  .packaging {
+    grid-column: 1/3;
+    font-size: 10.5rem;
+    font-family: neuehaasThin;
+    padding-left: 10px;
+  }
+
+  .editing {
+    grid-column: 1 /3;
+    grid-row: 9/10;
+    font-size: 10.5rem;
+    font-family: neuehaasThin;
+    padding-left: 10px;
+  }
+
+  .work3d {
+    grid-column: 1/3;
+    grid-row: 10/11;
+    font-size: 10.5rem;
+    font-family: neuehaasThin;
+    padding-left: 10px;
+  }
+
+  .work-display {
+    grid-column: 3/10;
+    grid-row: 3 /11;
+    position: relative;
+  }
+
+  .work-display-packaging {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    flex-direction: row;
+    position: absolute;
+    background-color: transparent;
+  }
+
+  .images {
+    position: relative;
+    margin: 10px;
+    width: 650px;
+    height: 650px;
+    overflow: hidden;
+  }
+
+  .images:hover {
+    box-shadow: 0px 5px 100px rgba(248, 248, 248, 0.13),
+      0px 5px 30px rgba(248, 248, 248, 0.205);
+  }
+
+  .imageBox {
+    width: 650px;
+    height: 650px;
+    overflow: hidden;
+  }
+
+  .imageBox img {
+    transform: scale(1);
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+    transition: all 0.5s ease;
+  }
+
+  .edit-video {
+    position: absolute;
+    width: 650px;
+    height: 650px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 0;
+    background-color: blue;
+    overflow: hidden;
+    transition: all 0.5s ease;
+    cursor: pointer;
+  }
+
+  .miniVideo {
+    width: 650px;
+    height: 650px;
+    object-fit: cover;
+  }
+
+  .edit-video img {
+    width: 650px;
+    height: 650px;
+  }
+
+  .threeD {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 650px;
+    height: 0;
+    transition: all 0.5s ease;
+    overflow: hidden;
+    z-index: 5;
+  }
+
+  .threeD img {
+    width: 650px;
+    height: 650px;
+  }
+
+  .work-light-Arrow {
+    grid-column: 10 / 12;
+    grid-row: 9 /11;
+    justify-self: flex-end;
+    align-self: center;
+    width: 370px;
+    height: 300px;
+    animation-name: arrowSlider;
+    animation-duration: 2s;
+    margin-right: 50px;
+  }
+
+  @keyframes arrowSlider {
+    from {
+      transform: translateX(-1600px);
+    }
+
+    to {
+      transform: translateX(0);
+    }
+  }
+
+  .work-light-Arrow svg {
+    width: 100%;
+    height: 100%;
+  }
+
+  .work-next {
+    color: white;
+    letter-spacing: 2.5px;
+    font-size: 3rem;
+    grid-column: 10/11;
+    grid-row: 9/10;
+    justify-self: flex-end;
+    align-self: flex-end;
+    width: 45px;
+    height: 20px;
+    margin-right: 60px;
+    margin-bottom: 25px;
+    animation-name: nextAnim;
+    animation-duration: 2s;
+    animation-delay: 2s;
+    opacity: 0;
+    animation-fill-mode: forwards;
+  }
+
+  @keyframes nextAnim {
+    from {
+      transform: translateY(10px);
+      opacity: 0;
+    }
+
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+
+  .about-me {
+    grid-column: 12/13;
+    grid-row: 9/11;
+    justify-self: center;
+    align-self: flex-end;
+    height: min-content;
+    margin-top: 80px;
+  }
+
+  .about {
+    align-self: flex-end;
+    color: white;
+    font-size: 8rem;
+    line-height: 0.5;
+    font-family: neuehaasThin;
+  }
+  .me {
+    color: white;
+    align-self: flex-start;
+    font-size: 17rem;
+    font-weight: bold;
+    line-height: 1;
+    font-family: neuehassLight;
+  }
+  .myVideo {
+    width: 90%;
+    height: 80%;
+  }
+
+  .backDrop {
+    position: absolute;
+    background-color: black;
+    width: 100%;
+    height: 100%;
+    z-index: 17;
+  }
+
+  .clsBtn {
+    position: absolute;
+    top: 12%;
+    left: 90%;
+    transform: translate(-8%, -80%);
+    cursor: pointer;
+    z-index: 19;
+  }
+}

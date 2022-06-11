@@ -1,0 +1,4557 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box; }
+
+@font-face {
+  font-family: neuehaasblack;
+  src: url(/fonts/neuehaas_black.ttf); }
+
+@font-face {
+  font-family: neueRegular;
+  src: url(/fonts/neuehaas_regular.ttf); }
+
+@font-face {
+  font-family: neuehaasThin;
+  src: url(/fonts/neuehaas_thin.ttf); }
+
+@font-face {
+  font-family: neuehassLight;
+  src: url(/fonts/neuehaas_light.ttf); }
+
+@font-face {
+  font-family: neuehassBold;
+  src: url(/fonts/neuehaas_bold.ttf); }
+
+html {
+  font-family: neueRegular;
+  font-size: 62.5%; }
+
+.home {
+  width: 100vw;
+  height: 100vh;
+  background-color: #181818;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: repeat(12, 1fr);
+  position: relative;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  transition: all 0.5s ease;
+  scroll-behavior: smooth;
+  scroll-snap-type: x proximity; }
+
+::-webkit-scrollbar {
+  width: 5px; }
+
+.home-noise {
+  opacity: 0.1;
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
+  position: absolute;
+  display: none; }
+
+header {
+  grid-column: 1/13;
+  grid-row: 1/2;
+  height: 100px;
+  display: flex;
+  z-index: 15; }
+
+.logo {
+  grid-column: 1 / 2;
+  grid-row: 1 / 2;
+  width: 80px;
+  align-self: center;
+  justify-self: end;
+  margin-left: 35px;
+  position: fixed;
+  cursor: pointer; }
+
+.logo svg {
+  width: 100%;
+  height: 100%; }
+
+.navbar {
+  grid-column: 12/13;
+  grid-row: 1 /13;
+  width: 70px;
+  justify-self: end;
+  align-self: flex-start;
+  z-index: 18;
+  position: fixed;
+  height: 100%;
+  backdrop-filter: blur(25px);
+  border-left: 0.1px solid #d1cfcf; }
+
+.navbar ul {
+  list-style-type: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%; }
+
+.navbar ul li {
+  cursor: pointer; }
+
+.rotate {
+  width: 125px;
+  height: 125px;
+  z-index: 16;
+  border-radius: 50%;
+  position: absolute;
+  right: 200px;
+  top: 281px;
+  position: fixed;
+  transition: all 8s ease;
+  animation-name: rotatean;
+  animation-duration: 8s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  animation-direction: normal; }
+
+@keyframes rotatean {
+  to {
+    transform: rotate(360deg); } }
+
+.rotate svg {
+  width: 100%;
+  height: 100%; }
+
+.rotate p {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  font-size: 1.5rem;
+  transform: translate(-50%, -50%); }
+
+.navbar ul li {
+  width: min-content;
+  height: min-content;
+  margin: 35px; }
+
+.navbar ul li a {
+  padding: 10px;
+  text-decoration: none;
+  color: white;
+  writing-mode: vertical-rl;
+  font-size: 1rem;
+  font-family: neuehassBold; }
+
+.home-box {
+  width: calc(100vw - 80px);
+  height: calc(100vh - 100px);
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: repeat(12, 1fr);
+  background-color: transparent;
+  position: absolute;
+  top: 100px;
+  scroll-snap-align: start;
+  scroll-behavior: smooth; }
+
+.home-box-iam {
+  color: white;
+  line-height: 0.5;
+  grid-column: 3 / 4;
+  grid-row: 3 / 4;
+  font-size: 5rem;
+  align-self: flex-end;
+  font-family: neuehaasThin; }
+
+.home-box-shahrukh {
+  color: white;
+  line-height: 0.5;
+  grid-column: 3 /8;
+  grid-row: 4 / 6;
+  font-size: 14.5rem;
+  align-self: center;
+  justify-self: left;
+  padding: 0;
+  font-family: neuehassLight; }
+
+.home-box-icon-bold-arrow {
+  grid-column: 5 / 6;
+  grid-row: 6 / 9;
+  align-self: flex-start;
+  justify-self: end;
+  margin-top: 30px;
+  width: 100px;
+  height: 95px; }
+
+.home-box-icon-bold-arrow svg {
+  width: 100%;
+  height: 100%; }
+
+.what-i-do {
+  grid-column: 6 / 7;
+  grid-row: 6 / 9;
+  align-self: flex-start;
+  justify-self: center;
+  line-height: 1.3;
+  margin-top: 24px; }
+
+.what-i-do-designer {
+  font-size: 2.7rem;
+  color: white;
+  font-family: neuehaasThin; }
+
+.what-i-do-video {
+  font-size: 2.7rem;
+  color: white;
+  font-family: neuehaasThin; }
+
+.what-i-do-3d {
+  font-size: 2.7rem;
+  color: white;
+  font-family: neuehaasThin; }
+
+.home-box-light-Arrow {
+  grid-column: 10 / 12;
+  grid-row: 10 /12;
+  justify-self: center;
+  width: 200px;
+  height: 150px;
+  animation-name: arrowSlider;
+  animation-duration: 2s;
+  margin-left: 70px; }
+
+@keyframes arrowSlider {
+  from {
+    transform: translateX(-1600px); }
+  to {
+    transform: translateX(0); } }
+
+.home-box-light-Arrow svg {
+  width: 100%;
+  height: 100%; }
+
+.selected-work {
+  grid-column: 12/13;
+  grid-row: 10/12;
+  justify-self: center;
+  align-self: flex-end;
+  height: min-content; }
+
+.selected {
+  align-self: flex-end;
+  color: white;
+  font-size: 2.5rem;
+  line-height: 0.5;
+  font-family: neuehaasThin; }
+
+.work {
+  color: white;
+  align-self: flex-start;
+  font-size: 8rem;
+  font-weight: bold;
+  line-height: 1;
+  font-family: neuehassLight; }
+
+.home-next {
+  color: white;
+  letter-spacing: 2.5px;
+  font-size: 1.5rem;
+  grid-column: 10/11;
+  grid-row: 10/11;
+  justify-self: start;
+  width: 45px;
+  height: 20px;
+  margin-top: 50px;
+  margin-left: 87px;
+  animation-name: nextAnim;
+  animation-duration: 2s;
+  animation-delay: 2s;
+  opacity: 0;
+  animation-fill-mode: forwards; }
+
+@keyframes nextAnim {
+  from {
+    transform: translateY(20px);
+    opacity: 0; }
+  to {
+    transform: translateY(0);
+    opacity: 1; } }
+
+.cursor {
+  cursor: default; }
+
+.mobile-tab {
+  display: none; }
+
+@media screen and (min-width: 1080px) and (max-width: 1280px) {
+  .mobile-tab {
+    display: none; }
+  .home {
+    width: 100vw;
+    height: 100vh;
+    background-color: black;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: repeat(12, 1fr);
+    position: relative;
+    overflow: hidden;
+    transition: all 0.5s ease; }
+  .home-noise {
+    opacity: 0.1;
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+    position: absolute;
+    display: none; }
+  header {
+    grid-column: 1/13;
+    grid-row: 1/2;
+    height: 100px;
+    display: flex;
+    z-index: 15; }
+  .logo {
+    grid-column: 1 / 3;
+    grid-row: 1 / 2;
+    width: 90px;
+    align-self: flex-end;
+    justify-self: flex-end;
+    margin-left: 52px;
+    cursor: pointer; }
+  .logo svg {
+    width: 100%;
+    height: 100%; }
+  .navbar {
+    grid-column: 12/13;
+    grid-row: 1 /13;
+    width: 57px;
+    justify-self: end;
+    align-self: flex-start;
+    z-index: 18;
+    position: fixed;
+    height: 100%;
+    backdrop-filter: blur(8px); }
+  .navbar ul {
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%; }
+  .navbar ul li {
+    cursor: pointer; }
+  .rotate {
+    width: 110px;
+    height: 110px;
+    z-index: 16;
+    border-radius: 50%;
+    position: absolute;
+    right: 180px;
+    top: 400px;
+    position: fixed;
+    transition: all 8s ease;
+    animation-name: rotatean;
+    animation-duration: 8s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+    animation-direction: normal; }
+  @keyframes rotatean {
+    to {
+      transform: rotate(360deg); } }
+  .rotate svg {
+    width: 100%;
+    height: 100%; }
+  .rotate p {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    font-size: 1.5rem;
+    transform: translate(-50%, -50%); }
+  .navbar ul li {
+    width: min-content;
+    height: min-content;
+    margin: 30%; }
+  .navbar ul li a {
+    padding: 10px;
+    text-decoration: none;
+    color: white;
+    writing-mode: vertical-rl;
+    font-size: 1rem;
+    font-family: neuehassBold; }
+  .home-box {
+    width: calc(100vw - 80px);
+    height: calc(100vh - 100px);
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: repeat(12, 1fr);
+    background-color: transparent;
+    position: absolute;
+    top: 100px; }
+  .home-box-iam {
+    color: white;
+    line-height: 0.5;
+    grid-column: 4 / 5;
+    grid-row: 3 / 4;
+    font-size: 5rem;
+    align-self: flex-end;
+    margin-bottom: 10px;
+    font-family: neuehaasThin; }
+  .home-box-shahrukh {
+    color: white;
+    line-height: 0.5;
+    grid-column: 4 /9;
+    grid-row: 4 / 5;
+    font-size: 10.5rem;
+    align-self: center;
+    justify-self: flex-start;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    font-family: neuehassLight; }
+  .home-box-icon-bold-arrow {
+    grid-column: 7 / 8;
+    grid-row: 5 / 7;
+    align-self: flex-start;
+    justify-self: end;
+    width: 80px;
+    height: 75px;
+    margin-right: 5px;
+    margin-top: 25px; }
+  .home-box-icon-bold-arrow svg {
+    width: 100%;
+    height: 100%; }
+  .what-i-do {
+    grid-column: 8 / 9;
+    grid-row: 5 / 7;
+    align-self: flex-start;
+    justify-self: center;
+    line-height: 1.3;
+    width: 120px;
+    margin-top: 23px; }
+  .what-i-do-designer {
+    font-size: 2rem;
+    color: white;
+    font-family: neuehaasThin; }
+  .what-i-do-video {
+    font-size: 2rem;
+    color: white;
+    font-family: neuehaasThin; }
+  .what-i-do-3d {
+    font-size: 2rem;
+    color: white;
+    font-family: neuehaasThin; }
+  .home-box-light-Arrow {
+    grid-column: 10 / 12;
+    grid-row: 9 /11;
+    justify-self: flex-start;
+    align-self: center;
+    width: 180px;
+    height: 130px;
+    animation-name: arrowSlider;
+    animation-duration: 2s;
+    margin-right: 10px; }
+  @keyframes arrowSlider {
+    from {
+      transform: translateX(-1600px); }
+    to {
+      transform: translateX(0); } }
+  .home-box-light-Arrow svg {
+    width: 100%;
+    height: 100%; }
+  .selected-work {
+    grid-column: 12/13;
+    grid-row: 9/11;
+    justify-self: center;
+    align-self: flex-end;
+    height: min-content; }
+  .selected {
+    align-self: flex-end;
+    color: white;
+    font-size: 2.3rem;
+    line-height: 0.5;
+    font-family: neuehaasThin; }
+  .work {
+    color: white;
+    align-self: flex-start;
+    font-size: 7rem;
+    font-weight: bold;
+    line-height: 1;
+    font-family: neuehassLight; }
+  .home-next {
+    color: white;
+    letter-spacing: 2.5px;
+    font-size: 1.3rem;
+    grid-column: 10/11;
+    grid-row: 9/10;
+    justify-self: start;
+    align-self: flex-end;
+    width: 45px;
+    height: 20px;
+    margin-bottom: 2%;
+    margin-left: 75px;
+    animation-name: nextAnim;
+    animation-duration: 2s;
+    animation-delay: 2s;
+    opacity: 0;
+    animation-fill-mode: forwards; }
+  @keyframes nextAnim {
+    from {
+      transform: translateY(20px);
+      opacity: 0; }
+    to {
+      transform: translateY(0);
+      opacity: 1; } }
+  .cursor {
+    cursor: default; } }
+
+@media screen and (min-width: 1281px) and (max-width: 1366px) {
+  .mobile-tab {
+    display: none; }
+  .home {
+    width: 100vw;
+    height: 100vh;
+    background-color: black;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: repeat(12, 1fr);
+    position: relative;
+    overflow: hidden;
+    transition: all 0.5s ease; }
+  .home-noise {
+    opacity: 0.1;
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+    position: absolute;
+    display: none; }
+  header {
+    grid-column: 1/13;
+    grid-row: 1/2;
+    height: 100px;
+    display: flex;
+    z-index: 15; }
+  .logo {
+    grid-column: 1 / 3;
+    grid-row: 1 / 2;
+    width: 90px;
+    align-self: flex-end;
+    justify-self: flex-end;
+    margin-left: 52px;
+    cursor: pointer; }
+  .logo svg {
+    width: 100%;
+    height: 100%; }
+  .navbar {
+    grid-column: 12/13;
+    grid-row: 1 /13;
+    width: 70px;
+    justify-self: end;
+    align-self: flex-start;
+    z-index: 18;
+    position: fixed;
+    height: 100%;
+    backdrop-filter: blur(25px); }
+  .navbar ul {
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%; }
+  .navbar ul li {
+    cursor: pointer; }
+  .rotate {
+    width: 110px;
+    height: 110px;
+    z-index: 16;
+    border-radius: 50%;
+    position: absolute;
+    right: 200px;
+    top: 281px;
+    position: fixed;
+    transition: all 8s ease;
+    animation-name: rotatean;
+    animation-duration: 8s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+    animation-direction: normal; }
+  @keyframes rotatean {
+    to {
+      transform: rotate(360deg); } }
+  .rotate svg {
+    width: 100%;
+    height: 100%; }
+  .rotate p {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    font-size: 1.5rem;
+    transform: translate(-50%, -50%); }
+  .navbar ul li {
+    width: min-content;
+    height: min-content;
+    margin: 20px; }
+  .navbar ul li a {
+    text-decoration: none;
+    color: white;
+    writing-mode: vertical-rl;
+    font-size: 1rem;
+    font-family: neuehassBold; }
+  .home-box {
+    width: calc(100vw - 80px);
+    height: calc(100vh - 100px);
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: repeat(12, 1fr);
+    background-color: transparent;
+    position: absolute;
+    top: 100px; }
+  .home-box-iam {
+    color: white;
+    line-height: 0.5;
+    grid-column: 4 / 5;
+    grid-row: 3 / 4;
+    font-size: 5rem;
+    align-self: center;
+    font-family: neuehaasThin; }
+  .home-box-shahrukh {
+    color: white;
+    line-height: 0.5;
+    grid-column: 4 /9;
+    grid-row: 4 / 5;
+    font-size: 11.5rem;
+    align-self: flex-start;
+    justify-self: flex-start;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    font-family: neuehassLight; }
+  .home-box-icon-bold-arrow {
+    grid-column: 7 / 8;
+    grid-row: 5 / 7;
+    align-self: flex-start;
+    justify-self: end;
+    width: 80px;
+    height: 75px;
+    margin-right: 5px;
+    margin-top: 25px; }
+  .home-box-icon-bold-arrow svg {
+    width: 100%;
+    height: 100%; }
+  .what-i-do {
+    grid-column: 8 / 9;
+    grid-row: 5 / 7;
+    align-self: flex-start;
+    justify-self: center;
+    line-height: 1.3;
+    width: 120px;
+    margin-top: 23px; }
+  .what-i-do-designer {
+    font-size: 2rem;
+    color: white;
+    font-family: neuehaasThin; }
+  .what-i-do-video {
+    font-size: 2rem;
+    color: white;
+    font-family: neuehaasThin; }
+  .what-i-do-3d {
+    font-size: 2rem;
+    color: white;
+    font-family: neuehaasThin; }
+  .home-box-light-Arrow {
+    grid-column: 10 / 12;
+    grid-row: 9 /11;
+    justify-self: flex-start;
+    align-self: center;
+    width: 180px;
+    height: 130px;
+    animation-name: arrowSlider;
+    animation-duration: 2s;
+    margin-right: 10px; }
+  @keyframes arrowSlider {
+    from {
+      transform: translateX(-1600px); }
+    to {
+      transform: translateX(0); } }
+  .home-box-light-Arrow svg {
+    width: 100%;
+    height: 100%; }
+  .selected-work {
+    grid-column: 12/13;
+    grid-row: 9/11;
+    justify-self: center;
+    align-self: center;
+    height: min-content;
+    margin-top: 57px; }
+  .selected {
+    align-self: flex-end;
+    color: white;
+    font-size: 2.3rem;
+    line-height: 0.5;
+    font-family: neuehaasThin; }
+  .work {
+    color: white;
+    align-self: flex-start;
+    font-size: 7rem;
+    font-weight: bold;
+    line-height: 1;
+    font-family: neuehassLight; }
+  .home-next {
+    color: white;
+    letter-spacing: 2.5px;
+    font-size: 1.3rem;
+    grid-column: 10/11;
+    grid-row: 9/10;
+    justify-self: start;
+    width: 45px;
+    height: 20px;
+    margin-left: 75px;
+    animation-name: nextAnim;
+    animation-duration: 2s;
+    animation-delay: 2s;
+    opacity: 0;
+    animation-fill-mode: forwards; }
+  @keyframes nextAnim {
+    from {
+      transform: translateY(20px);
+      opacity: 0; }
+    to {
+      transform: translateY(0);
+      opacity: 1; } }
+  .cursor {
+    cursor: default; } }
+
+@media screen and (min-width: 1367px) and (max-width: 1600px) {
+  .mobile-tab {
+    display: none; }
+  .home {
+    width: 100vw;
+    height: 100vh;
+    background-color: black;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: repeat(12, 1fr);
+    position: relative;
+    overflow: hidden;
+    transition: all 0.5s ease; }
+  .home-noise {
+    opacity: 0.1;
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+    position: absolute;
+    display: none; }
+  header {
+    grid-column: 1/13;
+    grid-row: 1/2;
+    height: 100px;
+    display: flex;
+    z-index: 15; }
+  .logo {
+    grid-column: 1 / 3;
+    grid-row: 1 / 2;
+    width: 90px;
+    align-self: flex-end;
+    justify-self: flex-end;
+    margin-left: 52px;
+    cursor: pointer; }
+  .logo svg {
+    width: 100%;
+    height: 100%; }
+  .navbar {
+    grid-column: 12/13;
+    grid-row: 1 /13;
+    width: 80px;
+    justify-self: end;
+    align-self: flex-start;
+    z-index: 18;
+    position: fixed;
+    height: 100%;
+    backdrop-filter: blur(25px); }
+  .navbar ul {
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%; }
+  .navbar ul li {
+    cursor: pointer; }
+  .rotate {
+    width: 110px;
+    height: 110px;
+    z-index: 16;
+    border-radius: 50%;
+    position: absolute;
+    right: 200px;
+    top: 281px;
+    position: fixed;
+    transition: all 8s ease;
+    animation-name: rotatean;
+    animation-duration: 8s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+    animation-direction: normal; }
+  @keyframes rotatean {
+    to {
+      transform: rotate(360deg); } }
+  .rotate svg {
+    width: 100%;
+    height: 100%; }
+  .rotate p {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    font-size: 1.5rem;
+    transform: translate(-50%, -50%); }
+  .navbar ul li {
+    width: min-content;
+    height: min-content;
+    margin: 30px; }
+  .navbar ul li a {
+    text-decoration: none;
+    color: white;
+    writing-mode: vertical-rl;
+    font-size: 1rem;
+    font-family: neuehassBold; }
+  .home-box {
+    width: calc(100vw - 80px);
+    height: calc(100vh - 100px);
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: repeat(12, 1fr);
+    background-color: transparent;
+    position: absolute;
+    top: 100px; }
+  .home-box-iam {
+    color: white;
+    line-height: 0.5;
+    grid-column: 4 / 5;
+    grid-row: 3 / 4;
+    font-size: 6rem;
+    align-self: center;
+    font-family: neuehaasThin; }
+  .home-box-shahrukh {
+    color: white;
+    line-height: 0.5;
+    grid-column: 4 /9;
+    grid-row: 4 / 5;
+    font-size: 14.5rem;
+    align-self: flex-start;
+    justify-self: flex-start;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    font-family: neuehassLight; }
+  .home-box-icon-bold-arrow {
+    grid-column: 7 / 8;
+    grid-row: 5 / 7;
+    align-self: flex-start;
+    justify-self: end;
+    width: 80px;
+    height: 75px;
+    margin-right: 5px;
+    margin-top: 25px; }
+  .home-box-icon-bold-arrow svg {
+    width: 100%;
+    height: 100%; }
+  .what-i-do {
+    grid-column: 8 / 9;
+    grid-row: 5 / 7;
+    align-self: flex-start;
+    justify-self: center;
+    line-height: 1.3;
+    width: 120px;
+    margin-top: 23px; }
+  .what-i-do-designer {
+    font-size: 2rem;
+    color: white;
+    font-family: neuehaasThin; }
+  .what-i-do-video {
+    font-size: 2rem;
+    color: white;
+    font-family: neuehaasThin; }
+  .what-i-do-3d {
+    font-size: 2rem;
+    color: white;
+    font-family: neuehaasThin; }
+  .home-box-light-Arrow {
+    grid-column: 10 / 12;
+    grid-row: 9 /11;
+    justify-self: flex-start;
+    align-self: center;
+    width: 180px;
+    height: 130px;
+    animation-name: arrowSlider;
+    animation-duration: 2s;
+    margin-right: 10px; }
+  @keyframes arrowSlider {
+    from {
+      transform: translateX(-1600px); }
+    to {
+      transform: translateX(0); } }
+  .home-box-light-Arrow svg {
+    width: 100%;
+    height: 100%; }
+  .selected-work {
+    grid-column: 12/13;
+    grid-row: 9/11;
+    justify-self: center;
+    align-self: center;
+    height: min-content;
+    margin-top: 57px; }
+  .selected {
+    align-self: flex-end;
+    color: white;
+    font-size: 3rem;
+    line-height: 0.5;
+    font-family: neuehaasThin; }
+  .work {
+    color: white;
+    align-self: flex-start;
+    font-size: 7rem;
+    font-weight: bold;
+    line-height: 1;
+    font-family: neuehassLight; }
+  .home-next {
+    color: white;
+    letter-spacing: 2.5px;
+    font-size: 1.3rem;
+    grid-column: 10/11;
+    grid-row: 9/10;
+    justify-self: start;
+    width: 45px;
+    height: 20px;
+    margin-left: 75px;
+    animation-name: nextAnim;
+    animation-duration: 2s;
+    animation-delay: 2s;
+    opacity: 0;
+    animation-fill-mode: forwards; }
+  @keyframes nextAnim {
+    from {
+      transform: translateY(20px);
+      opacity: 0; }
+    to {
+      transform: translateY(0);
+      opacity: 1; } }
+  .cursor {
+    cursor: default; } }
+
+@media screen and (min-width: 1921px) and (max-width: 2560px) {
+  .mobile-tab {
+    display: none; }
+  .home {
+    width: 100vw;
+    height: 100vh;
+    background-color: #181818;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: repeat(12, 1fr);
+    position: relative;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    transition: all 0.5s ease;
+    scroll-behavior: smooth;
+    scroll-snap-type: x proximity; }
+  ::-webkit-scrollbar-track {
+    background: transparent; }
+  ::-webkit-scrollbar {
+    width: 5px; }
+  ::-webkit-scrollbar-thumb {
+    background: transparent; }
+  ::-webkit-scrollbar-thumb:hover {
+    background: transparent; }
+  .home-noise {
+    opacity: 0.1;
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+    position: absolute;
+    display: none; }
+  header {
+    grid-column: 1/13;
+    grid-row: 1/2;
+    height: 100px;
+    display: flex;
+    z-index: 15; }
+  .logo {
+    grid-column: 1 / 3;
+    grid-row: 1 / 3;
+    width: 100px;
+    align-self: center;
+    justify-self: center;
+    margin-left: 60px;
+    margin-top: 60px;
+    cursor: pointer; }
+  .logo svg {
+    width: 100%;
+    height: 100%; }
+  .navbar {
+    grid-column: 12/13;
+    grid-row: 1 /13;
+    width: 80px;
+    justify-self: end;
+    align-self: flex-start;
+    z-index: 18;
+    position: fixed;
+    height: 98%;
+    margin-top: 10px;
+    border-left: 0.1px solid #d1cfcf;
+    backdrop-filter: blur(25px); }
+  .navbar ul {
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%; }
+  .navbar ul li {
+    cursor: pointer; }
+  .rotate {
+    width: 130px;
+    height: 130px;
+    z-index: 16;
+    border-radius: 50%;
+    position: absolute;
+    right: 260px;
+    top: 340px;
+    position: fixed;
+    transition: all 8s ease;
+    animation-name: rotatean;
+    animation-duration: 8s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+    animation-direction: normal; }
+  @keyframes rotatean {
+    to {
+      transform: rotate(360deg); } }
+  .rotate svg {
+    width: 100%;
+    height: 100%; }
+  .rotate p {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    font-size: 1.5rem;
+    transform: translate(-50%, -50%); }
+  .navbar ul li {
+    width: min-content;
+    height: min-content;
+    margin: 50px; }
+  .navbar ul li a {
+    text-decoration: none;
+    color: white;
+    writing-mode: vertical-rl;
+    font-size: 1.5rem;
+    font-family: neuehassBold; }
+  .home-box {
+    width: calc(100vw - 80px);
+    height: calc(100vh - 100px);
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: repeat(12, 1fr);
+    background-color: transparent;
+    position: absolute;
+    top: 100px; }
+  .home-box-iam {
+    color: white;
+    line-height: 1.1;
+    grid-column: 3 / 4;
+    grid-row: 3 / 4;
+    font-size: 11rem;
+    align-self: center;
+    font-family: neuehaasThin; }
+  .home-box-shahrukh {
+    color: white;
+    line-height: 0.5;
+    grid-column: 3 /9;
+    grid-row: 4 / 5;
+    font-size: 25rem;
+    align-self: flex-start;
+    justify-self: flex-start;
+    padding-top: 20px;
+    padding-bottom: 90px;
+    font-family: neuehassLight; }
+  .home-box-icon-bold-arrow {
+    grid-column: 6 / 7;
+    grid-row: 5 / 6;
+    align-self: center;
+    justify-self: flex-end;
+    width: 120px;
+    height: 120px;
+    margin-right: -10px; }
+  .home-box-icon-bold-arrow svg {
+    width: 100%;
+    height: 100%; }
+  .what-i-do {
+    grid-column: 7 / 8;
+    grid-row: 5 / 6;
+    align-self: flex-start;
+    justify-self: center;
+    line-height: 1.3;
+    width: 190px;
+    position: absolute;
+    right: -15px;
+    top: -10px; }
+  .what-i-do-designer {
+    font-size: 3.5rem;
+    color: white;
+    font-family: neuehaasThin; }
+  .what-i-do-video {
+    font-size: 3.6rem;
+    color: white;
+    font-family: neuehaasThin; }
+  .what-i-do-3d {
+    font-size: 3.5rem;
+    color: white;
+    font-family: neuehaasThin; }
+  .home-box-light-Arrow {
+    grid-column: 10 / 12;
+    grid-row: 9 /11;
+    justify-self: flex-end;
+    align-self: center;
+    width: 250px;
+    height: 190px;
+    animation-name: arrowSlider;
+    animation-duration: 2s;
+    margin-right: 20px; }
+  @keyframes arrowSlider {
+    from {
+      transform: translateX(-1600px); }
+    to {
+      transform: translateX(0); } }
+  .home-box-light-Arrow svg {
+    width: 100%;
+    height: 100%; }
+  .selected-work {
+    grid-column: 12/13;
+    grid-row: 9/11;
+    justify-self: flex-end;
+    align-self: center;
+    height: min-content;
+    margin-top: 80px; }
+  .selected {
+    align-self: flex-end;
+    color: white;
+    font-size: 4.5rem;
+    line-height: 0.5;
+    font-family: neuehaasThin; }
+  .work {
+    color: white;
+    align-self: flex-start;
+    font-size: 11rem;
+    font-weight: bold;
+    line-height: 1;
+    font-family: neuehassLight; }
+  .home-next {
+    color: white;
+    letter-spacing: 2.5px;
+    font-size: 2rem;
+    grid-column: 10/11;
+    grid-row: 9/10;
+    justify-self: flex-end;
+    align-self: flex-end;
+    width: 45px;
+    height: 20px;
+    margin-right: 22px;
+    margin-bottom: 10px;
+    animation-name: nextAnim;
+    animation-duration: 2s;
+    animation-delay: 2s;
+    opacity: 0;
+    animation-fill-mode: forwards; }
+  @keyframes nextAnim {
+    from {
+      transform: translateY(20px);
+      opacity: 0; }
+    to {
+      transform: translateY(0);
+      opacity: 1; } }
+  .cursor {
+    cursor: default; } }
+
+@media screen and (min-width: 2561px) and (max-width: 3440px) {
+  .mobile-tab {
+    display: none; }
+  .home {
+    width: 100vw;
+    height: 100vh;
+    background-color: black;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: repeat(12, 1fr);
+    position: relative;
+    overflow: hidden;
+    transition: all 0.5s ease; }
+  .home-noise {
+    opacity: 0.1;
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+    position: absolute;
+    display: none; }
+  header {
+    grid-column: 1/13;
+    grid-row: 1/2;
+    height: 100px;
+    display: flex;
+    z-index: 15; }
+  .logo {
+    grid-column: 1 / 3;
+    grid-row: 1 / 3;
+    width: 180px;
+    align-self: center;
+    justify-self: center;
+    margin-left: 100px;
+    margin-top: 140px;
+    cursor: pointer; }
+  .logo svg {
+    width: 100%;
+    height: 100%; }
+  .navbar {
+    grid-column: 12/13;
+    grid-row: 1 /13;
+    width: 80px;
+    justify-self: end;
+    align-self: flex-start;
+    z-index: 18;
+    position: fixed;
+    height: 100%;
+    backdrop-filter: blur(25px); }
+  .navbar ul {
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%; }
+  .navbar ul li {
+    cursor: pointer; }
+  .rotate {
+    width: 150px;
+    height: 150px;
+    z-index: 16;
+    border-radius: 50%;
+    position: absolute;
+    right: 260px;
+    top: 500px;
+    position: fixed;
+    transition: all 8s ease;
+    animation-name: rotatean;
+    animation-duration: 8s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+    animation-direction: normal; }
+  @keyframes rotatean {
+    to {
+      transform: rotate(360deg); } }
+  .rotate svg {
+    width: 100%;
+    height: 100%; }
+  .rotate p {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    font-size: 1.5rem;
+    transform: translate(-50%, -50%); }
+  .navbar ul li {
+    width: min-content;
+    height: min-content;
+    margin: 50px; }
+  .navbar ul li a {
+    text-decoration: none;
+    color: white;
+    writing-mode: vertical-rl;
+    font-size: 2rem;
+    font-family: neuehassBold; }
+  .home-box {
+    width: calc(100vw - 80px);
+    height: calc(100vh - 100px);
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: repeat(12, 1fr);
+    background-color: transparent;
+    position: absolute;
+    top: 100px; }
+  .home-box-iam {
+    color: white;
+    line-height: 0.5;
+    grid-column: 3 / 4;
+    grid-row: 3 / 4;
+    font-size: 9rem;
+    align-self: center;
+    font-family: neuehaasThin; }
+  .home-box-shahrukh {
+    color: white;
+    line-height: 0.5;
+    grid-column: 3 / 7;
+    grid-row: 4 / 5;
+    font-size: 26rem;
+    align-self: flex-start;
+    justify-self: flex-start;
+    padding-top: 30px;
+    padding-bottom: 102px;
+    font-family: neuehassLight; }
+  .home-box-icon-bold-arrow {
+    grid-column: 5 / 6;
+    grid-row: 5 / 6;
+    align-self: center;
+    justify-self: flex-end;
+    width: 150px;
+    height: 150px;
+    margin-right: 5px; }
+  .home-box-icon-bold-arrow svg {
+    width: 100%;
+    height: 100%; }
+  .what-i-do {
+    grid-column: 6 / 7;
+    grid-row: 5 / 6;
+    align-self: flex-start;
+    justify-self: center;
+    line-height: 1.3;
+    width: 255px; }
+  .what-i-do-designer {
+    font-size: 4.2rem;
+    color: white;
+    font-family: neuehaasThin; }
+  .what-i-do-video {
+    font-size: 4.2rem;
+    color: white;
+    font-family: neuehaasThin; }
+  .what-i-do-3d {
+    font-size: 4.2rem;
+    color: white;
+    font-family: neuehaasThin; }
+  .home-box-light-Arrow {
+    grid-column: 10 / 12;
+    grid-row: 9 /11;
+    justify-self: flex-end;
+    align-self: center;
+    width: 300px;
+    height: 220px;
+    animation-name: arrowSlider;
+    animation-duration: 2s;
+    margin-right: 20px; }
+  @keyframes arrowSlider {
+    from {
+      transform: translateX(-1600px); }
+    to {
+      transform: translateX(0); } }
+  .home-box-light-Arrow svg {
+    width: 100%;
+    height: 100%; }
+  .selected-work {
+    grid-column: 12/13;
+    grid-row: 9/11;
+    justify-self: flex-end;
+    align-self: center;
+    height: min-content;
+    margin-top: 80px; }
+  .selected {
+    align-self: flex-end;
+    color: white;
+    font-size: 5rem;
+    line-height: 0.5;
+    font-family: neuehaasThin; }
+  .work {
+    color: white;
+    align-self: flex-start;
+    font-size: 13rem;
+    font-weight: bold;
+    line-height: 1;
+    font-family: neuehassLight; }
+  .home-next {
+    color: white;
+    letter-spacing: 2.5px;
+    font-size: 2rem;
+    grid-column: 10/12;
+    grid-row: 9/10;
+    justify-self: flex-end;
+    align-self: flex-end;
+    width: 45px;
+    height: 20px;
+    margin-right: 270px;
+    margin-bottom: 12px;
+    animation-name: nextAnim;
+    animation-duration: 2s;
+    animation-delay: 2s;
+    opacity: 0;
+    animation-fill-mode: forwards; }
+  @keyframes nextAnim {
+    from {
+      transform: translateY(20px);
+      opacity: 0; }
+    to {
+      transform: translateY(0);
+      opacity: 1; } }
+  .cursor {
+    cursor: default; } }
+
+@media screen and (min-width: 3441px) and (max-width: 3840px) {
+  .mobile-tab {
+    display: none; }
+  .home {
+    width: 100vw;
+    height: 100vh;
+    background-color: black;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: repeat(12, 1fr);
+    position: relative;
+    overflow: hidden;
+    transition: all 0.5s ease; }
+  .home-noise {
+    opacity: 0.1;
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+    position: absolute;
+    display: none; }
+  header {
+    grid-column: 1/13;
+    grid-row: 1/2;
+    height: 100px;
+    display: flex;
+    z-index: 15; }
+  .logo {
+    grid-column: 1 / 3;
+    grid-row: 1 / 3;
+    width: 230px;
+    align-self: center;
+    justify-self: center;
+    margin-left: 200px;
+    margin-top: 250px;
+    cursor: pointer; }
+  .logo svg {
+    width: 100%;
+    height: 100%; }
+  .navbar {
+    grid-column: 12/13;
+    grid-row: 1 /13;
+    width: 150px;
+    justify-self: end;
+    align-self: flex-start;
+    z-index: 18;
+    position: fixed;
+    height: 100%;
+    backdrop-filter: blur(25px); }
+  .navbar ul {
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%; }
+  .navbar ul li {
+    cursor: pointer; }
+  .rotate {
+    width: 230px;
+    height: 230px;
+    z-index: 16;
+    border-radius: 50%;
+    position: absolute;
+    right: 350px;
+    top: 700px;
+    position: fixed;
+    transition: all 8s ease;
+    animation-name: rotatean;
+    animation-duration: 8s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+    animation-direction: normal; }
+  @keyframes rotatean {
+    to {
+      transform: rotate(360deg); } }
+  .rotate svg {
+    width: 100%;
+    height: 100%; }
+  .rotate p {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    font-size: 1.5rem;
+    transform: translate(-50%, -50%); }
+  .navbar ul li {
+    width: min-content;
+    height: min-content;
+    margin: 80px; }
+  .navbar ul li a {
+    text-decoration: none;
+    color: white;
+    writing-mode: vertical-rl;
+    font-size: 2.5rem;
+    font-family: neuehassBold; }
+  .home-box {
+    width: calc(100vw - 80px);
+    height: calc(100vh - 100px);
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: repeat(12, 1fr);
+    background-color: transparent;
+    position: absolute;
+    top: 100px; }
+  .home-box-iam {
+    color: white;
+    line-height: 0.5;
+    grid-column: 3 / 4;
+    grid-row: 3 / 4;
+    font-size: 15rem;
+    align-self: center;
+    justify-self: flex-start;
+    font-family: neuehaasThin; }
+  .home-box-shahrukh {
+    color: white;
+    line-height: 0.5;
+    grid-column: 3 / 7;
+    grid-row: 4 / 5;
+    font-size: 29.5rem;
+    align-self: flex-start;
+    justify-self: flex-start;
+    padding-top: 50px;
+    padding-bottom: 130px;
+    font-family: neuehassLight; }
+  .home-box-icon-bold-arrow {
+    grid-column: 5 / 6;
+    grid-row: 5 / 6;
+    align-self: center;
+    justify-self: flex-end;
+    width: 190px;
+    height: 190px; }
+  .home-box-icon-bold-arrow svg {
+    width: 100%;
+    height: 100%; }
+  .what-i-do {
+    grid-column: 6 / 7;
+    grid-row: 5 / 6;
+    align-self: flex-start;
+    justify-self: flex-end;
+    line-height: 1.3;
+    width: 90%; }
+  .what-i-do-designer {
+    font-size: 5.3rem;
+    color: white;
+    font-family: neuehaasThin; }
+  .what-i-do-video {
+    font-size: 5.3rem;
+    color: white;
+    font-family: neuehaasThin; }
+  .what-i-do-3d {
+    font-size: 5.3rem;
+    color: white;
+    font-family: neuehaasThin; }
+  .home-box-light-Arrow {
+    grid-column: 10 / 12;
+    grid-row: 9 /11;
+    justify-self: flex-end;
+    align-self: center;
+    width: 370px;
+    height: 300px;
+    animation-name: arrowSlider;
+    animation-duration: 2s;
+    margin-right: 250px; }
+  @keyframes arrowSlider {
+    from {
+      transform: translateX(-1600px); }
+    to {
+      transform: translateX(0); } }
+  .home-box-light-Arrow svg {
+    width: 100%;
+    height: 100%; }
+  .selected-work {
+    grid-column: 11/13;
+    grid-row: 9/11;
+    justify-self: center;
+    align-self: flex-end;
+    height: min-content;
+    margin-top: 80px; }
+  .selected {
+    align-self: flex-end;
+    color: white;
+    font-size: 8rem;
+    line-height: 0.5;
+    font-family: neuehaasThin; }
+  .work {
+    color: white;
+    align-self: flex-start;
+    font-size: 17rem;
+    font-weight: bold;
+    line-height: 1;
+    font-family: neuehassLight; }
+  .home-next {
+    color: white;
+    letter-spacing: 2.5px;
+    font-size: 3rem;
+    grid-column: 10/12;
+    grid-row: 9/10;
+    justify-self: flex-end;
+    align-self: flex-end;
+    width: 45px;
+    height: 20px;
+    margin-right: 572px;
+    margin-bottom: 25px;
+    animation-name: nextAnim;
+    animation-duration: 2s;
+    animation-delay: 2s;
+    opacity: 0;
+    animation-fill-mode: forwards; }
+  @keyframes nextAnim {
+    from {
+      transform: translateY(20px);
+      opacity: 0; }
+    to {
+      transform: translateY(0);
+      opacity: 1; } }
+  .cursor {
+    cursor: default; } }
+
+.about-box {
+  width: calc(100vw - 80px);
+  height: calc(100vh - 100px);
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: repeat(12, 1fr);
+  background-color: transparent;
+  position: absolute;
+  color: white;
+  top: 100px;
+  transition: all 0.5s ease;
+  scroll-snap-align: start;
+  scroll-behavior: smooth; }
+
+.shahImage {
+  position: absolute;
+  grid-column: 1/6;
+  grid-row: 1/13;
+  top: -100px; }
+
+.shahImage img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center; }
+
+.intro {
+  grid-column: 6/11;
+  grid-row: 2 /7; }
+
+.intro p {
+  font-size: 4.5rem;
+  line-height: 1.3;
+  padding: 20px; }
+
+.introTwo {
+  grid-column: 8 /11;
+  grid-row: 6/10; }
+
+.introTwo p {
+  font-size: 1.8rem;
+  padding: 30px; }
+
+.introTwo p span:nth-child(1) {
+  font-style: italic; }
+
+.years7 {
+  color: #ff9933; }
+
+.contactmy {
+  grid-column: 12/13;
+  grid-row: 10/12;
+  justify-self: flex-start;
+  align-self: flex-end;
+  height: min-content; }
+
+.contact {
+  align-self: flex-end;
+  color: white;
+  font-size: 2.5rem;
+  line-height: 0.5;
+  font-family: neuehaasThin; }
+
+.me {
+  color: white;
+  align-self: flex-start;
+  font-size: 8rem;
+  font-weight: bold;
+  line-height: 1;
+  font-family: neuehassLight; }
+
+.about-light-Arrow {
+  grid-column: 10 / 12;
+  grid-row: 10 /12;
+  justify-self: center;
+  width: 200px;
+  height: 150px;
+  animation-name: arrowSlider;
+  animation-duration: 2s;
+  margin-left: 70px; }
+
+@keyframes arrowSlider {
+  from {
+    transform: translateX(-1600px); }
+  to {
+    transform: translateX(0); } }
+
+.about-light-Arrow svg {
+  width: 100%;
+  height: 100%; }
+
+.about-next {
+  color: white;
+  letter-spacing: 2.5px;
+  font-size: 1.5rem;
+  grid-column: 10/11;
+  grid-row: 10/11;
+  justify-self: start;
+  width: 45px;
+  height: 20px;
+  margin-top: 50px;
+  margin-left: 87px;
+  animation-name: nextAnim;
+  animation-duration: 2s;
+  animation-delay: 2s;
+  opacity: 0;
+  animation-fill-mode: forwards; }
+
+@keyframes nextAnim {
+  from {
+    transform: translateY(20px);
+    opacity: 0; }
+  to {
+    transform: translateY(0);
+    opacity: 1; } }
+
+@media screen and (min-width: 1080px) and (max-width: 1280px) {
+  .about-box {
+    width: calc(100vw - 80px);
+    height: calc(100vh - 100px);
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: repeat(12, 1fr);
+    background-color: black;
+    position: absolute;
+    color: white;
+    top: 100px;
+    transition: all 0.5s ease;
+    scroll-snap-align: start; }
+  .shahImage {
+    grid-column: 1/7;
+    grid-row: 1/12; }
+  .shahImage img {
+    width: 100%;
+    object-position: center;
+    object-fit: cover; }
+  .intro {
+    grid-column: 7/12;
+    grid-row: 2 /6; }
+  .intro p {
+    font-size: 3.5rem;
+    line-height: 1.3;
+    padding: 20px; }
+  .introTwo {
+    grid-column: 8 /12;
+    grid-row: 6/10; }
+  .introTwo p {
+    font-size: 1.8rem;
+    padding: 10px; }
+  .introTwo p span:nth-child(1) {
+    font-style: italic; }
+  .years7 {
+    color: #ff9933; }
+  .contactmy {
+    grid-column: 12/13;
+    grid-row: 9/11;
+    justify-self: flex-end;
+    align-self: center;
+    height: min-content;
+    position: absolute;
+    top: 60px;
+    left: 0; }
+  .contact {
+    align-self: flex-end;
+    color: white;
+    font-size: 2.5rem;
+    line-height: 0.5;
+    font-family: neuehaasThin; }
+  .me {
+    color: white;
+    align-self: flex-start;
+    font-size: 8rem;
+    font-weight: bold;
+    line-height: 1;
+    font-family: neuehassLight; }
+  .about-light-Arrow {
+    grid-column: 10 / 12;
+    grid-row: 9 /11;
+    justify-self: flex-end;
+    width: 200px;
+    height: 150px;
+    animation-name: arrowSlider;
+    animation-duration: 2s;
+    margin-right: 10px; }
+  @keyframes arrowSlider {
+    from {
+      transform: translateX(-1600px); }
+    to {
+      transform: translateX(0); } }
+  .about-light-Arrow svg {
+    width: 100%;
+    height: 100%; }
+  .about-next {
+    position: absolute;
+    color: white;
+    letter-spacing: 2.5px;
+    font-size: 1.3rem;
+    grid-column: 10/11;
+    grid-row: 9/10;
+    justify-self: center;
+    width: 45px;
+    height: 20px;
+    bottom: 2px;
+    right: 25px;
+    animation-name: nextAnim;
+    animation-duration: 2s;
+    animation-delay: 2s;
+    opacity: 0;
+    animation-fill-mode: forwards; }
+  @keyframes nextAnim {
+    from {
+      transform: translateY(20px);
+      opacity: 0; }
+    to {
+      transform: translateY(0);
+      opacity: 1; } } }
+
+@media screen and (min-width: 1281px) and (max-width: 1366px) {
+  .about-box {
+    width: calc(100vw - 80px);
+    height: calc(100vh - 100px);
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: repeat(12, 1fr);
+    background-color: black;
+    position: absolute;
+    color: white;
+    top: 100px;
+    transition: all 0.5s ease;
+    scroll-snap-align: start; }
+  .shahImage {
+    grid-column: 1/7;
+    grid-row: 1/12; }
+  .shahImage img {
+    width: 100%;
+    object-position: top;
+    object-fit: cover; }
+  .intro {
+    grid-column: 7/12;
+    grid-row: 2 /6; }
+  .intro p {
+    font-size: 3rem;
+    line-height: 1.3;
+    padding: 10px; }
+  .introTwo {
+    grid-column: 8 /12;
+    grid-row: 6/10; }
+  .introTwo p {
+    font-size: 1.5rem;
+    padding: 10px; }
+  .introTwo p span:nth-child(1) {
+    font-style: italic; }
+  .years7 {
+    color: #ff9933; }
+  .contactmy {
+    grid-column: 12/13;
+    grid-row: 9/11;
+    justify-self: flex-end;
+    align-self: center;
+    height: min-content;
+    position: absolute;
+    top: 50px;
+    left: 0; }
+  .contact {
+    align-self: flex-end;
+    justify-self: center;
+    color: white;
+    font-size: 2.5rem;
+    line-height: 0.5;
+    margin-left: 5px;
+    font-family: neuehaasThin; }
+  .me {
+    color: white;
+    align-self: flex-start;
+    font-size: 8rem;
+    font-weight: bold;
+    line-height: 1;
+    font-family: neuehassLight; }
+  .about-light-Arrow {
+    grid-column: 10 / 12;
+    grid-row: 9 /11;
+    justify-self: center;
+    width: 180px;
+    height: 130px;
+    animation-name: arrowSlider;
+    animation-duration: 2s;
+    margin-left: 70px; }
+  @keyframes arrowSlider {
+    from {
+      transform: translateX(-1600px); }
+    to {
+      transform: translateX(0); } }
+  .about-light-Arrow svg {
+    width: 100%;
+    height: 100%; }
+  .about-next {
+    position: absolute;
+    color: white;
+    letter-spacing: 2.5px;
+    font-size: 1.3rem;
+    grid-column: 10/11;
+    grid-row: 9/10;
+    justify-self: center;
+    width: 45px;
+    height: 20px;
+    bottom: 0px;
+    right: 6px;
+    animation-name: nextAnim;
+    animation-duration: 2s;
+    animation-delay: 2s;
+    opacity: 0;
+    animation-fill-mode: forwards; }
+  @keyframes nextAnim {
+    from {
+      transform: translateY(20px);
+      opacity: 0; }
+    to {
+      transform: translateY(0);
+      opacity: 1; } } }
+
+@media screen and (min-width: 1367px) and (max-width: 1600px) {
+  .about-box {
+    width: calc(100vw - 80px);
+    height: calc(100vh - 100px);
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: repeat(12, 1fr);
+    background-color: black;
+    position: absolute;
+    color: white;
+    top: 100px;
+    transition: all 0.5s ease;
+    scroll-snap-align: start; }
+  .shahImage {
+    grid-column: 1/6;
+    grid-row: 1/12; }
+  .shahImage img {
+    width: 100%;
+    object-position: top;
+    object-fit: cover; }
+  .intro {
+    grid-column: 6/11;
+    grid-row: 2 /6; }
+  .intro p {
+    font-size: 3.3rem;
+    line-height: 1.3;
+    padding: 10px; }
+  .introTwo {
+    grid-column: 7 /11;
+    grid-row: 6/10; }
+  .introTwo p {
+    font-size: 1.8rem;
+    padding: 10px; }
+  .introTwo p span:nth-child(1) {
+    font-style: italic; }
+  .years7 {
+    color: #ff9933; }
+  .contactmy {
+    grid-column: 12/13;
+    grid-row: 9/11;
+    justify-self: flex-end;
+    align-self: center;
+    height: min-content;
+    position: absolute;
+    top: 50px;
+    left: 0; }
+  .contact {
+    align-self: flex-end;
+    justify-self: center;
+    color: white;
+    font-size: 2.5rem;
+    line-height: 0.5;
+    margin-left: 5px;
+    font-family: neuehaasThin; }
+  .me {
+    color: white;
+    align-self: flex-start;
+    font-size: 8rem;
+    font-weight: bold;
+    line-height: 1;
+    font-family: neuehassLight; }
+  .about-light-Arrow {
+    grid-column: 10 / 12;
+    grid-row: 9 /11;
+    justify-self: center;
+    width: 180px;
+    height: 130px;
+    animation-name: arrowSlider;
+    animation-duration: 2s;
+    margin-left: 70px; }
+  @keyframes arrowSlider {
+    from {
+      transform: translateX(-1600px); }
+    to {
+      transform: translateX(0); } }
+  .about-light-Arrow svg {
+    width: 100%;
+    height: 100%; }
+  .about-next {
+    position: absolute;
+    color: white;
+    letter-spacing: 2.5px;
+    font-size: 1.3rem;
+    grid-column: 10/11;
+    grid-row: 9/10;
+    justify-self: center;
+    width: 45px;
+    height: 20px;
+    bottom: 0px;
+    right: 6px;
+    animation-name: nextAnim;
+    animation-duration: 2s;
+    animation-delay: 2s;
+    opacity: 0;
+    animation-fill-mode: forwards; }
+  @keyframes nextAnim {
+    from {
+      transform: translateY(20px);
+      opacity: 0; }
+    to {
+      transform: translateY(0);
+      opacity: 1; } } }
+
+@media screen and (min-width: 1921px) and (max-width: 2560px) {
+  .about-box {
+    width: calc(100vw - 80px);
+    height: calc(100vh - 100px);
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: repeat(12, 1fr);
+    background-color: transparent;
+    position: absolute;
+    color: white;
+    top: 100px;
+    transition: all 0.5s ease;
+    scroll-snap-align: start; }
+  .shahImage {
+    position: relative;
+    top: -100px;
+    height: 1500px;
+    grid-column: 1/6;
+    grid-row: 1/12; }
+  .shahImage img {
+    width: 100%;
+    object-position: top;
+    object-fit: cover; }
+  .intro {
+    grid-column: 6/11;
+    grid-row: 2 /6; }
+  .intro p {
+    font-size: 6.3rem;
+    line-height: 1.3;
+    padding: 15px; }
+  .introTwo {
+    grid-column: 7 /11;
+    grid-row: 6/10; }
+  .introTwo p {
+    font-size: 3rem;
+    padding: 10px; }
+  .introTwo p span:nth-child(1) {
+    font-style: italic; }
+  .years7 {
+    color: #ff9933; }
+  .contactmy {
+    grid-column: 12/13;
+    grid-row: 8/10;
+    justify-self: flex-start;
+    align-self: center;
+    height: min-content;
+    margin-top: 100px; }
+  .contact {
+    align-self: flex-end;
+    color: white;
+    font-size: 4.5rem;
+    line-height: 0.5;
+    font-family: neuehaasThin; }
+  .me {
+    color: white;
+    align-self: flex-start;
+    font-size: 11rem;
+    font-weight: bold;
+    line-height: 1;
+    font-family: neuehassLight; }
+  .about-light-Arrow {
+    grid-column: 10 / 12;
+    grid-row: 8 /10;
+    justify-self: flex-end;
+    align-self: center;
+    width: 250px;
+    height: 190px;
+    animation-name: arrowSlider;
+    animation-duration: 2s;
+    margin-right: 20px; }
+  @keyframes arrowSlider {
+    from {
+      transform: translateX(-1600px); }
+    to {
+      transform: translateX(0); } }
+  .about-light-Arrow svg {
+    width: 100%;
+    height: 100%; }
+  .about-next {
+    color: white;
+    letter-spacing: 2.5px;
+    font-size: 2rem;
+    grid-column: 10/11;
+    grid-row: 8/9;
+    justify-self: flex-end;
+    align-self: flex-end;
+    width: 45px;
+    height: 20px;
+    margin-right: 18px;
+    margin-bottom: 10px;
+    animation-name: nextAnim;
+    animation-duration: 2s;
+    animation-delay: 2s;
+    opacity: 0;
+    animation-fill-mode: forwards; }
+  @keyframes nextAnim {
+    from {
+      transform: translateY(20px);
+      opacity: 0; }
+    to {
+      transform: translateY(0);
+      opacity: 1; } } }
+
+@media screen and (min-width: 2561px) and (max-width: 3440px) {
+  .about-box {
+    width: calc(100vw - 80px);
+    height: calc(100vh - 100px);
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: repeat(12, 1fr);
+    background-color: black;
+    position: absolute;
+    color: white;
+    top: 100px;
+    transition: all 0.5s ease;
+    scroll-snap-align: start; }
+  .shahImage {
+    grid-column: 1/6;
+    grid-row: 1/12; }
+  .shahImage img {
+    width: 100%;
+    object-position: top;
+    object-fit: cover; }
+  .intro {
+    grid-column: 6/11;
+    grid-row: 2 /6; }
+  .intro p {
+    font-size: 6.3rem;
+    line-height: 1.3;
+    padding: 15px; }
+  .introTwo {
+    grid-column: 7 /11;
+    grid-row: 6/10; }
+  .introTwo p {
+    font-size: 3rem;
+    padding: 10px; }
+  .introTwo p span:nth-child(1) {
+    font-style: italic; }
+  .years7 {
+    color: #ff9933; }
+  .contactmy {
+    grid-column: 12/13;
+    grid-row: 9/11;
+    justify-self: flex-start;
+    align-self: fle;
+    height: min-content;
+    margin-top: 30px; }
+  .contact {
+    align-self: flex-end;
+    color: white;
+    font-size: 5rem;
+    line-height: 0.5;
+    font-family: neuehaasThin; }
+  .me {
+    color: white;
+    align-self: flex-start;
+    font-size: 13rem;
+    font-weight: bold;
+    line-height: 1;
+    font-family: neuehassLight; }
+  .about-light-Arrow {
+    grid-column: 10 / 12;
+    grid-row: 9 /11;
+    justify-self: flex-end;
+    align-self: center;
+    width: 300px;
+    height: 220px;
+    animation-name: arrowSlider;
+    animation-duration: 2s;
+    margin-right: 20px; }
+  @keyframes arrowSlider {
+    from {
+      transform: translateX(-1600px); }
+    to {
+      transform: translateX(0); } }
+  .about-light-Arrow svg {
+    width: 100%;
+    height: 100%; }
+  .about-next {
+    color: white;
+    letter-spacing: 2.5px;
+    font-size: 2rem;
+    grid-column: 10/12;
+    grid-row: 9/10;
+    justify-self: flex-end;
+    align-self: flex-end;
+    width: 45px;
+    height: 20px;
+    margin-right: 270px;
+    margin-bottom: 12px;
+    animation-name: nextAnim;
+    animation-duration: 2s;
+    animation-delay: 2s;
+    opacity: 0;
+    animation-fill-mode: forwards; }
+  @keyframes nextAnim {
+    from {
+      transform: translateY(20px);
+      opacity: 0; }
+    to {
+      transform: translateY(0);
+      opacity: 1; } } }
+
+@media screen and (min-width: 3441px) and (max-width: 3840px) {
+  .about-box {
+    width: calc(100vw - 80px);
+    height: calc(100vh - 100px);
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: repeat(12, 1fr);
+    background-color: black;
+    position: absolute;
+    color: white;
+    top: 100px;
+    transition: all 0.5s ease;
+    scroll-snap-align: start; }
+  .shahImage {
+    grid-column: 1/6;
+    grid-row: 1/12; }
+  .shahImage img {
+    width: 100%;
+    object-position: top;
+    object-fit: cover; }
+  .intro {
+    grid-column: 6/11;
+    grid-row: 2 /6; }
+  .intro p {
+    font-size: 9rem;
+    line-height: 1.3;
+    padding: 15px; }
+  .introTwo {
+    grid-column: 7 /11;
+    grid-row: 6/10; }
+  .introTwo p {
+    font-size: 5rem;
+    padding: 15px; }
+  .introTwo p span:nth-child(1) {
+    font-style: italic; }
+  .years7 {
+    color: #ff9933; }
+  .contactmy {
+    grid-column: 12/13;
+    grid-row: 9/11;
+    justify-self: center;
+    align-self: flex-end;
+    height: min-content;
+    margin-top: 80px; }
+  .contact {
+    align-self: flex-end;
+    color: white;
+    font-size: 7rem;
+    line-height: 0.5;
+    font-family: neuehaasThin; }
+  .me {
+    color: white;
+    align-self: flex-start;
+    font-size: 17rem;
+    font-weight: bold;
+    line-height: 1;
+    font-family: neuehassLight; }
+  .about-light-Arrow {
+    grid-column: 10 / 12;
+    grid-row: 9 /11;
+    justify-self: flex-end;
+    align-self: center;
+    width: 370px;
+    height: 300px;
+    animation-name: arrowSlider;
+    animation-duration: 2s;
+    margin-right: 50px; }
+  @keyframes arrowSlider {
+    from {
+      transform: translateX(-1600px); }
+    to {
+      transform: translateX(0); } }
+  .about-light-Arrow svg {
+    width: 100%;
+    height: 100%; }
+  .about-next {
+    color: white;
+    letter-spacing: 2.5px;
+    font-size: 3rem;
+    grid-column: 10/11;
+    grid-row: 9/10;
+    justify-self: flex-end;
+    align-self: flex-end;
+    width: 45px;
+    height: 20px;
+    margin-right: 60px;
+    margin-bottom: 25px;
+    animation-name: nextAnim;
+    animation-duration: 2s;
+    animation-delay: 2s;
+    opacity: 0;
+    animation-fill-mode: forwards; }
+  @keyframes nextAnim {
+    from {
+      transform: translateY(20px);
+      opacity: 0; }
+    to {
+      transform: translateY(0);
+      opacity: 1; } } }
+
+.work-selected {
+  width: calc(100vw - 80px);
+  height: calc(100vh - 100px);
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: repeat(12, 1fr);
+  background-color: #181818;
+  position: absolute;
+  color: white;
+  top: 100px;
+  transition: all 0.5s ease;
+  scroll-snap-align: start;
+  scroll-behavior: smooth; }
+
+.work-selected-main-image {
+  grid-column: 1/10;
+  grid-row: 2/12; }
+
+.work-selected-main-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center; }
+
+.work-selected-main-text {
+  grid-column: 8/10;
+  grid-row: 11/12;
+  font-size: 4rem; }
+
+.work-selected-main-link {
+  grid-column: 8/10;
+  grid-row: 11/12;
+  text-decoration: none;
+  color: white; }
+
+.work-type {
+  grid-column: 1/3;
+  grid-row: 8/11;
+  width: 260px;
+  justify-self: center; }
+
+.packaging {
+  grid-column: 1/3;
+  font-size: 5rem;
+  font-family: neuehaasThin; }
+
+.editing {
+  grid-column: 1 /3;
+  grid-row: 9/10;
+  font-size: 5rem;
+  font-family: neuehaasThin; }
+
+.work3d {
+  grid-column: 1/3;
+  grid-row: 10/11;
+  font-size: 5rem;
+  font-family: neuehaasThin; }
+
+.work-display {
+  grid-column: 3/10;
+  grid-row: 4 /12;
+  position: relative; }
+
+.work-display-packaging {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  flex-direction: row;
+  position: absolute;
+  background-color: transparent; }
+
+.images {
+  position: relative;
+  margin: 10px;
+  width: 337px;
+  height: 260px;
+  overflow: hidden;
+  transition: all 0.5s ease; }
+
+.images:hover {
+  box-shadow: 0px 5px 100px rgba(248, 248, 248, 0.13), 0px 5px 30px rgba(248, 248, 248, 0.205); }
+
+.imageBox {
+  width: 337px;
+  height: 260px;
+  overflow: hidden; }
+
+.images:hover {
+  transform: scale(0.9); }
+
+.imageBox img {
+  transform: scale(1);
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
+  transition: all 0.5s ease; }
+
+.threeD img {
+  transition: all 0.5s ease; }
+
+.about-me {
+  grid-column: 12/13;
+  grid-row: 10/12;
+  justify-self: flex-end;
+  align-self: center;
+  height: min-content;
+  position: absolute;
+  top: 60px;
+  left: 0; }
+
+.about {
+  align-self: flex-end;
+  justify-self: flex-start;
+  color: white;
+  font-size: 2.5rem;
+  line-height: 0.5;
+  font-family: neuehaasThin; }
+
+.me {
+  color: white;
+  align-self: flex-start;
+  font-size: 8rem;
+  font-weight: bold;
+  line-height: 1;
+  font-family: neuehassLight; }
+
+.work-display-editing {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  display: none;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  flex-direction: row;
+  background-color: transparent; }
+
+.edit-video {
+  position: absolute;
+  width: 337px;
+  height: 260px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 0;
+  background-color: blue;
+  overflow: hidden;
+  transition: all 0.5s ease;
+  cursor: pointer; }
+
+.miniVideo {
+  width: 100%;
+  object-fit: cover; }
+
+.edit-video img {
+  width: 337px;
+  height: 260px; }
+
+.edit-video-icon {
+  z-index: 2;
+  position: absolute;
+  width: 100px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  cursor: pointer; }
+
+.myVideo {
+  position: absolute;
+  z-index: 18;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  object-fit: cover;
+  object-position: center; }
+
+.myVideo.hide {
+  display: none; }
+
+.clsBtn {
+  position: absolute;
+  top: 8%;
+  left: 80%;
+  transform: translate(-8%, -80%);
+  cursor: pointer;
+  z-index: 18; }
+
+.backDrop {
+  position: absolute;
+  backdrop-filter: blur(10px);
+  width: 1850px;
+  height: 825px;
+  z-index: 17; }
+
+.backDrop.hide {
+  display: none; }
+
+.clsBtn.hide {
+  display: none; }
+
+.fas {
+  font-size: 3.5rem;
+  text-align: center;
+  width: 100%; }
+
+.work-display-3dwork {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  display: none;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  flex-direction: row;
+  background-color: transparent; }
+
+.threeD {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 337px;
+  height: 0;
+  background-color: red;
+  transition: all 0.5s ease;
+  overflow: hidden;
+  z-index: 5; }
+
+.threeD img {
+  width: 337px;
+  height: 260px; }
+
+.tabs {
+  cursor: pointer; }
+
+.tabs.active {
+  font-weight: bold; }
+
+.displaBox.block {
+  display: flex;
+  animation-name: boxani;
+  animation-duration: 0.5s; }
+
+@keyframes boxani {
+  from {
+    transform: translateY(200px); }
+  to {
+    transform: translateY(0); } }
+
+.imgOverlay {
+  position: absolute;
+  z-index: 15;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  background-color: transparent;
+  opacity: 0;
+  transition: all 0.8s ease;
+  cursor: pointer; }
+
+.imgOverlay-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: transparent;
+  cursor: pointer;
+  border-radius: 50px; }
+
+.threeD:hover img {
+  transform: scale(1.5); }
+
+.threeD:hover .imgOverlay {
+  top: 0;
+  opacity: 1; }
+
+.imgOverlay-text svg {
+  margin: 10px; }
+
+.imageBox:hover img {
+  transform: scale(1.5); }
+
+.imageBox:hover .imgOverlay {
+  top: 0;
+  opacity: 1; }
+
+.work-fullDisplay {
+  position: absolute;
+  width: calc(100%);
+  height: calc(100% - 40px);
+  right: 0;
+  background-color: black;
+  z-index: 16;
+  display: flex;
+  overflow: hidden; }
+
+.work-fullDisplay-aboutCom {
+  position: absolute;
+  z-index: 17;
+  color: white;
+  bottom: 0;
+  left: 350px;
+  font-size: 1.8rem;
+  line-height: 1.8;
+  font-family: neuehassLight; }
+
+.work-fullDisplay-aboutWork {
+  position: absolute;
+  z-index: 17;
+  width: 700px;
+  height: 100%;
+  left: 1475px;
+  background-color: rgba(2, 2, 2, 0.733); }
+
+.work-fullDisplay-aboutWork h1 {
+  font-size: 3rem;
+  width: 80%;
+  margin: 25px auto; }
+
+.work-fullDisplay-aboutWork p {
+  font-size: 1.5rem;
+  text-align: justify;
+  width: 80%;
+  margin: 0 auto; }
+
+.work-fullDisplay-img {
+  position: absolute;
+  width: 90%;
+  height: 90%;
+  right: 0;
+  border: 2px solid black; }
+
+.challenge {
+  width: 10px; }
+
+.work-fullDisplay-img-microlyscs {
+  position: absolute;
+  width: 90%;
+  height: 90%;
+  right: 0;
+  border: 2px solid black; }
+
+.work-fullDisplay-img-protiGum {
+  position: absolute;
+  width: 90%;
+  height: 90%;
+  right: 0;
+  border: 2px solid black; }
+
+.work-fullDisplay-img-sunrise {
+  position: absolute;
+  width: 90%;
+  height: 90%;
+  right: 0;
+  border: 2px solid black; }
+
+.work-fullDisplay-img-vestapet {
+  position: absolute;
+  width: 90%;
+  height: 90%;
+  right: 0;
+  border: 2px solid black; }
+
+.work-fullDisplay-img-vestapet img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center; }
+
+.work-fullDisplay-img-sunrise img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center; }
+
+.work-fullDisplay-img-protiGum img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center; }
+
+.work-fullDisplay-img-microlyscs img {
+  width: 100%;
+  height: 100%;
+  object-fit: unset;
+  object-position: center; }
+
+.work-fullDisplay-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center; }
+
+.workBtn {
+  display: none; }
+
+.work-fullDisplay-arrow {
+  position: relative;
+  width: 250px;
+  height: 150px;
+  grid-column: 1/3;
+  grid-row: 2 / 4;
+  z-index: 18;
+  transform: rotateY(180deg);
+  cursor: pointer; }
+
+.work-fullDisplay-arrow svg {
+  width: 100%;
+  height: 100%; }
+
+.work-fullDisplay-arrow-text {
+  position: absolute;
+  font-size: 2rem;
+  color: white;
+  top: 45px;
+  left: 30px;
+  transform: rotateY(180deg);
+  letter-spacing: 2.5px; }
+
+.work-fullDisplay.hide {
+  display: none; }
+
+.work-light-Arrow {
+  grid-column: 10 / 12;
+  grid-row: 10 /12;
+  justify-self: center;
+  width: 200px;
+  height: 150px;
+  animation-name: arrowSlider;
+  animation-duration: 2s;
+  margin-left: 70px; }
+
+@keyframes arrowSlider {
+  from {
+    transform: translateX(-1600px); }
+  to {
+    transform: translateX(0); } }
+
+.work-light-Arrow svg {
+  width: 100%;
+  height: 100%; }
+
+.work-next {
+  color: white;
+  letter-spacing: 2.5px;
+  font-size: 1.5rem;
+  grid-column: 10/11;
+  grid-row: 10/11;
+  justify-self: start;
+  width: 45px;
+  height: 20px;
+  margin-top: 50px;
+  margin-left: 87px;
+  animation-name: nextAnim;
+  animation-duration: 2s;
+  animation-delay: 2s;
+  opacity: 0;
+  animation-fill-mode: forwards; }
+
+@keyframes nextAnim {
+  from {
+    transform: translateY(10px);
+    opacity: 0; }
+  to {
+    transform: translateY(0);
+    opacity: 1; } }
+
+@media screen and (min-width: 1080px) and (max-width: 1280px) {
+  .work-type {
+    grid-column: 1/3;
+    grid-row: 8/11;
+    width: 190px;
+    justify-self: center; }
+  .packaging {
+    grid-column: 1/3;
+    font-size: 4rem;
+    font-family: neuehaasThin;
+    padding-left: 10px; }
+  .editing {
+    grid-column: 1 /3;
+    grid-row: 9/10;
+    font-size: 4rem;
+    font-family: neuehaasThin;
+    padding-left: 10px; }
+  .work3d {
+    grid-column: 1/3;
+    grid-row: 10/11;
+    font-size: 4rem;
+    font-family: neuehaasThin;
+    padding-left: 10px; }
+  .work-display {
+    grid-column: 3/11;
+    grid-row: 3 /11;
+    position: relative; }
+  .work-display-packaging {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    flex-direction: row;
+    position: absolute; }
+  .images {
+    position: relative;
+    margin: 10px;
+    width: 300px;
+    height: 200px;
+    overflow: hidden; }
+  .images:hover {
+    box-shadow: 0px 5px 100px rgba(248, 248, 248, 0.13), 0px 5px 30px rgba(248, 248, 248, 0.205); }
+  .imageBox {
+    width: 300px;
+    height: 200px;
+    overflow: hidden; }
+  .imageBox img {
+    transform: scale(1);
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+    transition: all 0.5s ease; }
+  .work-light-Arrow {
+    grid-column: 10 / 12;
+    grid-row: 9 /11;
+    justify-self: center;
+    width: 200px;
+    height: 150px;
+    animation-name: arrowSlider;
+    animation-duration: 2s;
+    margin-left: 70px; }
+  .work-next {
+    color: white;
+    letter-spacing: 2.5px;
+    font-size: 1.5rem;
+    grid-column: 10/11;
+    grid-row: 9/10;
+    justify-self: start;
+    width: 45px;
+    height: 20px;
+    margin-top: 50px;
+    margin-right: 35px;
+    animation-name: nextAnim;
+    animation-duration: 2s;
+    animation-delay: 2s;
+    opacity: 0;
+    animation-fill-mode: forwards; }
+  @keyframes nextAnim {
+    from {
+      transform: translateY(10px);
+      opacity: 0; }
+    to {
+      transform: translateY(0);
+      opacity: 1; } }
+  .about-me {
+    grid-column: 12/13;
+    grid-row: 9/11;
+    justify-self: flex-end;
+    align-self: center;
+    height: min-content;
+    position: absolute;
+    top: 60px;
+    left: 0; }
+  .about {
+    align-self: flex-end;
+    justify-self: flex-start;
+    color: white;
+    font-size: 2.5rem;
+    line-height: 0.5;
+    font-family: neuehaasThin; }
+  .me {
+    color: white;
+    align-self: flex-start;
+    font-size: 8rem;
+    font-weight: bold;
+    line-height: 1;
+    font-family: neuehassLight; }
+  .myVideo {
+    width: 90%; } }
+
+@media screen and (min-width: 1281px) and (max-width: 1366px) {
+  .work-type {
+    grid-column: 1/3;
+    grid-row: 7/10;
+    width: 190px;
+    justify-self: center; }
+  .packaging {
+    grid-column: 1/3;
+    font-size: 4rem;
+    font-family: neuehaasThin;
+    padding-left: 10px; }
+  .editing {
+    grid-column: 1 /3;
+    grid-row: 9/10;
+    font-size: 4rem;
+    font-family: neuehaasThin;
+    padding-left: 10px; }
+  .work3d {
+    grid-column: 1/3;
+    grid-row: 10/11;
+    font-size: 4rem;
+    font-family: neuehaasThin;
+    padding-left: 10px; }
+  .work-display {
+    grid-column: 3/12;
+    grid-row: 3 /11;
+    position: relative; }
+  .work-display-packaging {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    flex-direction: row;
+    position: absolute; }
+  .images {
+    position: relative;
+    margin: 10px;
+    width: 265px;
+    height: 205px;
+    overflow: hidden;
+    transition: all 05s ease; }
+  .images:hover {
+    box-shadow: 0px 5px 100px rgba(248, 248, 248, 0.13), 0px 5px 30px rgba(248, 248, 248, 0.205); }
+  .imageBox {
+    width: 265px;
+    height: 205px;
+    overflow: hidden; }
+  .imageBox img {
+    transform: scale(1);
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+    transition: all 0.5s ease; }
+  .work-light-Arrow {
+    grid-column: 10 / 12;
+    grid-row: 9 /11;
+    justify-self: center;
+    width: 180px;
+    height: 130px;
+    animation-name: arrowSlider;
+    animation-duration: 2s;
+    margin-left: 70px; }
+  .work-next {
+    position: absolute;
+    color: white;
+    letter-spacing: 2.5px;
+    font-size: 1.3rem;
+    grid-column: 10/11;
+    grid-row: 9/10;
+    justify-self: center;
+    width: 45px;
+    height: 20px;
+    bottom: 0px;
+    right: 6px;
+    animation-name: nextAnim;
+    animation-duration: 2s;
+    animation-delay: 2s;
+    opacity: 0;
+    animation-fill-mode: forwards; }
+  @keyframes nextAnim {
+    from {
+      transform: translateY(10px);
+      opacity: 0; }
+    to {
+      transform: translateY(0);
+      opacity: 1; } }
+  .about-me {
+    grid-column: 12/13;
+    grid-row: 9/11;
+    justify-self: flex-end;
+    align-self: center;
+    height: min-content;
+    position: absolute;
+    top: 50px;
+    left: 0; }
+  .about {
+    align-self: flex-end;
+    justify-self: center;
+    color: white;
+    font-size: 2.5rem;
+    line-height: 0.5;
+    margin-left: 5px;
+    font-family: neuehaasThin; }
+  .me {
+    color: white;
+    align-self: flex-start;
+    font-size: 8rem;
+    font-weight: bold;
+    line-height: 1;
+    font-family: neuehassLight; }
+  .myVideo {
+    width: 90%;
+    height: 80%; } }
+
+@media screen and (min-width: 1367px) and (max-width: 1600px) {
+  .work-type {
+    grid-column: 1/3;
+    grid-row: 7/10;
+    width: 230px;
+    justify-self: center; }
+  .packaging {
+    grid-column: 1/3;
+    font-size: 4.5rem;
+    font-family: neuehaasThin;
+    padding-left: 10px; }
+  .editing {
+    grid-column: 1 /3;
+    grid-row: 9/10;
+    font-size: 4.5rem;
+    font-family: neuehaasThin;
+    padding-left: 10px; }
+  .work3d {
+    grid-column: 1/3;
+    grid-row: 10/11;
+    font-size: 4rem;
+    font-family: neuehaasThin;
+    padding-left: 10px; }
+  .work-display {
+    grid-column: 3/10;
+    grid-row: 3 /11;
+    position: relative; }
+  .work-display-packaging {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    flex-direction: row;
+    position: absolute; }
+  .images {
+    position: relative;
+    margin: 10px;
+    width: 275px;
+    height: 238px;
+    overflow: hidden; }
+  .images:hover {
+    box-shadow: 0px 5px 100px rgba(248, 248, 248, 0.13), 0px 5px 30px rgba(248, 248, 248, 0.205); }
+  .imageBox {
+    width: 275px;
+    height: 238px;
+    overflow: hidden; }
+  .imageBox img {
+    transform: scale(1);
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+    transition: all 0.5s ease; }
+  .work-light-Arrow {
+    grid-column: 10 / 12;
+    grid-row: 9 /11;
+    justify-self: center;
+    width: 180px;
+    height: 130px;
+    animation-name: arrowSlider;
+    animation-duration: 2s;
+    margin-left: 70px; }
+  .work-next {
+    position: absolute;
+    color: white;
+    letter-spacing: 2.5px;
+    font-size: 1.3rem;
+    grid-column: 10/11;
+    grid-row: 9/10;
+    justify-self: center;
+    width: 45px;
+    height: 20px;
+    bottom: 0px;
+    right: 6px;
+    animation-name: nextAnim;
+    animation-duration: 2s;
+    animation-delay: 2s;
+    opacity: 0;
+    animation-fill-mode: forwards; }
+  @keyframes nextAnim {
+    from {
+      transform: translateY(10px);
+      opacity: 0; }
+    to {
+      transform: translateY(0);
+      opacity: 1; } }
+  .about-me {
+    grid-column: 12/13;
+    grid-row: 9/11;
+    justify-self: flex-end;
+    align-self: center;
+    height: min-content;
+    position: absolute;
+    top: 50px;
+    left: 0; }
+  .about {
+    align-self: flex-end;
+    justify-self: center;
+    color: white;
+    font-size: 2.5rem;
+    line-height: 0.5;
+    margin-left: 5px;
+    font-family: neuehaasThin; }
+  .me {
+    color: white;
+    align-self: flex-start;
+    font-size: 8rem;
+    font-weight: bold;
+    line-height: 1;
+    font-family: neuehassLight; }
+  .myVideo {
+    width: 90%;
+    height: 80%; } }
+
+@media screen and (min-width: 1921px) and (max-width: 2560px) {
+  .work-type {
+    grid-column: 1/3;
+    grid-row: 7/10;
+    width: 400px;
+    justify-self: center; }
+  .packaging {
+    grid-column: 1/3;
+    font-size: 7.5rem;
+    font-family: neuehaasThin;
+    padding-left: 10px; }
+  .editing {
+    grid-column: 1 /3;
+    grid-row: 9/10;
+    font-size: 7.5rem;
+    font-family: neuehaasThin;
+    padding-left: 10px; }
+  .work3d {
+    grid-column: 1/3;
+    grid-row: 10/11;
+    font-size: 7.5rem;
+    font-family: neuehaasThin;
+    padding-left: 10px; }
+  .work-display {
+    grid-column: 3/10;
+    grid-row: 3 /11;
+    position: relative; }
+  .work-display-packaging {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    flex-direction: row;
+    position: absolute;
+    background-color: transparent; }
+  .images {
+    position: relative;
+    margin: 10px;
+    width: 460px;
+    height: 415px;
+    overflow: hidden; }
+  .images:hover {
+    box-shadow: 0px 5px 100px rgba(248, 248, 248, 0.13), 0px 5px 30px rgba(248, 248, 248, 0.205); }
+  .imageBox {
+    width: 460px;
+    height: 415px;
+    overflow: hidden; }
+  .imageBox img {
+    transform: scale(1);
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+    transition: all 0.5s ease; }
+  .edit-video {
+    position: absolute;
+    width: 460px;
+    height: 415px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 0;
+    background-color: blue;
+    overflow: hidden;
+    transition: all 0.5s ease;
+    cursor: pointer; }
+  .miniVideo {
+    width: 460px;
+    height: 415px;
+    object-fit: cover; }
+  .edit-video img {
+    width: 460px;
+    height: 415px; }
+  .threeD {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 460px;
+    height: 0;
+    background-color: red;
+    transition: all 0.5s ease;
+    overflow: hidden;
+    z-index: 5; }
+  .threeD img {
+    width: 460px;
+    height: 415px; }
+  .work-light-Arrow {
+    grid-column: 10 / 12;
+    grid-row: 9 /12;
+    justify-self: flex-end;
+    align-self: center;
+    width: 250px;
+    height: 190px;
+    animation-name: arrowSlider;
+    animation-duration: 2s;
+    margin-right: 20px;
+    margin-top: 40px; }
+  @keyframes arrowSlider {
+    from {
+      transform: translateX(-1600px); }
+    to {
+      transform: translateX(0); } }
+  .work-light-Arrow svg {
+    width: 100%;
+    height: 100%; }
+  .work-next {
+    color: white;
+    letter-spacing: 2.5px;
+    font-size: 2rem;
+    grid-column: 10/11;
+    grid-row: 10/11;
+    justify-self: flex-end;
+    align-self: flex-end;
+    width: 45px;
+    height: 20px;
+    margin-right: 18px;
+    margin-bottom: 50px;
+    animation-name: nextAnim;
+    animation-duration: 2s;
+    animation-delay: 2s;
+    opacity: 0;
+    animation-fill-mode: forwards; }
+  @keyframes nextAnim {
+    from {
+      transform: translateY(10px);
+      opacity: 0; }
+    to {
+      transform: translateY(0);
+      opacity: 1; } }
+  .about-me {
+    grid-column: 12/13;
+    grid-row: 9/12;
+    justify-self: flex-end;
+    align-self: center;
+    height: min-content;
+    margin-top: 100px; }
+  .about {
+    align-self: flex-end;
+    color: white;
+    font-size: 4.5rem;
+    line-height: 0.5;
+    font-family: neuehaasThin; }
+  .me {
+    color: white;
+    align-self: flex-start;
+    font-size: 11rem;
+    font-weight: bold;
+    line-height: 1;
+    font-family: neuehassLight; }
+  .myVideo {
+    width: 90%;
+    height: 80%; }
+  .backDrop {
+    position: absolute;
+    background-color: black;
+    width: 100%;
+    height: 100%;
+    z-index: 17; }
+  .clsBtn {
+    position: absolute;
+    top: 8%;
+    left: 90%;
+    transform: translate(-8%, -80%);
+    cursor: pointer;
+    z-index: 18; } }
+
+@media screen and (min-width: 2561px) and (max-width: 3440px) {
+  .work-type {
+    grid-column: 1/3;
+    grid-row: 7/10;
+    width: 400px;
+    justify-self: center; }
+  .packaging {
+    grid-column: 1/3;
+    font-size: 8rem;
+    font-family: neuehaasThin;
+    padding-left: 10px; }
+  .editing {
+    grid-column: 1 /3;
+    grid-row: 9/10;
+    font-size: 8rem;
+    font-family: neuehaasThin;
+    padding-left: 10px; }
+  .work3d {
+    grid-column: 1/3;
+    grid-row: 10/11;
+    font-size: 8rem;
+    font-family: neuehaasThin;
+    padding-left: 10px; }
+  .work-display {
+    grid-column: 3/10;
+    grid-row: 3 /11;
+    position: relative; }
+  .work-display-packaging {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    flex-direction: row;
+    position: absolute;
+    background-color: transparent; }
+  .images {
+    position: relative;
+    margin: 10px;
+    width: 460px;
+    height: 415px;
+    overflow: hidden; }
+  .images:hover {
+    box-shadow: 0px 5px 100px rgba(248, 248, 248, 0.13), 0px 5px 30px rgba(248, 248, 248, 0.205); }
+  .imageBox {
+    width: 460px;
+    height: 415px;
+    overflow: hidden; }
+  .imageBox img {
+    transform: scale(1);
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+    transition: all 0.5s ease; }
+  .edit-video {
+    position: absolute;
+    width: 460px;
+    height: 415px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 0;
+    background-color: blue;
+    overflow: hidden;
+    transition: all 0.5s ease;
+    cursor: pointer; }
+  .miniVideo {
+    width: 460px;
+    height: 415px;
+    object-fit: cover; }
+  .edit-video img {
+    width: 460px;
+    height: 415px; }
+  .threeD {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 460px;
+    height: 0;
+    transition: all 0.5s ease;
+    overflow: hidden;
+    z-index: 5; }
+  .threeD img {
+    width: 460px;
+    height: 415px; }
+  .work-light-Arrow {
+    grid-column: 10 / 12;
+    grid-row: 9 /11;
+    justify-self: flex-end;
+    align-self: center;
+    width: 300px;
+    height: 220px;
+    animation-name: arrowSlider;
+    animation-duration: 2s;
+    margin-right: 20px; }
+  @keyframes arrowSlider {
+    from {
+      transform: translateX(-1600px); }
+    to {
+      transform: translateX(0); } }
+  .work-light-Arrow svg {
+    width: 100%;
+    height: 100%; }
+  .work-next {
+    color: white;
+    letter-spacing: 2.5px;
+    font-size: 2rem;
+    grid-column: 10/12;
+    grid-row: 9/10;
+    justify-self: flex-end;
+    align-self: flex-end;
+    width: 45px;
+    height: 20px;
+    margin-right: 270px;
+    margin-bottom: 12px;
+    animation-name: nextAnim;
+    animation-duration: 2s;
+    animation-delay: 2s;
+    opacity: 0;
+    animation-fill-mode: forwards; }
+  @keyframes nextAnim {
+    from {
+      transform: translateY(10px);
+      opacity: 0; }
+    to {
+      transform: translateY(0);
+      opacity: 1; } }
+  .about-me {
+    grid-column: 12/13;
+    grid-row: 9/11;
+    justify-self: flex-end;
+    align-self: center;
+    height: min-content;
+    margin-top: 30px; }
+  .about {
+    align-self: flex-end;
+    color: white;
+    font-size: 5rem;
+    line-height: 0.5;
+    font-family: neuehaasThin; }
+  .me {
+    color: white;
+    align-self: flex-start;
+    font-size: 13rem;
+    font-weight: bold;
+    line-height: 1;
+    font-family: neuehassLight; }
+  .myVideo {
+    width: 90%;
+    height: 80%; }
+  .backDrop {
+    position: absolute;
+    background-color: black;
+    width: 100%;
+    height: 100%;
+    z-index: 17; }
+  .clsBtn {
+    position: absolute;
+    top: 8%;
+    left: 90%;
+    transform: translate(-8%, -80%);
+    cursor: pointer;
+    z-index: 18; } }
+
+@media screen and (min-width: 3441px) and (max-width: 3840px) {
+  .work-type {
+    grid-column: 1/3;
+    grid-row: 7/10;
+    width: 550px;
+    justify-self: center; }
+  .packaging {
+    grid-column: 1/3;
+    font-size: 10.5rem;
+    font-family: neuehaasThin;
+    padding-left: 10px; }
+  .editing {
+    grid-column: 1 /3;
+    grid-row: 9/10;
+    font-size: 10.5rem;
+    font-family: neuehaasThin;
+    padding-left: 10px; }
+  .work3d {
+    grid-column: 1/3;
+    grid-row: 10/11;
+    font-size: 10.5rem;
+    font-family: neuehaasThin;
+    padding-left: 10px; }
+  .work-display {
+    grid-column: 3/10;
+    grid-row: 3 /11;
+    position: relative; }
+  .work-display-packaging {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    flex-direction: row;
+    position: absolute;
+    background-color: transparent; }
+  .images {
+    position: relative;
+    margin: 10px;
+    width: 650px;
+    height: 650px;
+    overflow: hidden; }
+  .images:hover {
+    box-shadow: 0px 5px 100px rgba(248, 248, 248, 0.13), 0px 5px 30px rgba(248, 248, 248, 0.205); }
+  .imageBox {
+    width: 650px;
+    height: 650px;
+    overflow: hidden; }
+  .imageBox img {
+    transform: scale(1);
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+    transition: all 0.5s ease; }
+  .edit-video {
+    position: absolute;
+    width: 650px;
+    height: 650px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 0;
+    background-color: blue;
+    overflow: hidden;
+    transition: all 0.5s ease;
+    cursor: pointer; }
+  .miniVideo {
+    width: 650px;
+    height: 650px;
+    object-fit: cover; }
+  .edit-video img {
+    width: 650px;
+    height: 650px; }
+  .threeD {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 650px;
+    height: 0;
+    transition: all 0.5s ease;
+    overflow: hidden;
+    z-index: 5; }
+  .threeD img {
+    width: 650px;
+    height: 650px; }
+  .work-light-Arrow {
+    grid-column: 10 / 12;
+    grid-row: 9 /11;
+    justify-self: flex-end;
+    align-self: center;
+    width: 370px;
+    height: 300px;
+    animation-name: arrowSlider;
+    animation-duration: 2s;
+    margin-right: 50px; }
+  @keyframes arrowSlider {
+    from {
+      transform: translateX(-1600px); }
+    to {
+      transform: translateX(0); } }
+  .work-light-Arrow svg {
+    width: 100%;
+    height: 100%; }
+  .work-next {
+    color: white;
+    letter-spacing: 2.5px;
+    font-size: 3rem;
+    grid-column: 10/11;
+    grid-row: 9/10;
+    justify-self: flex-end;
+    align-self: flex-end;
+    width: 45px;
+    height: 20px;
+    margin-right: 60px;
+    margin-bottom: 25px;
+    animation-name: nextAnim;
+    animation-duration: 2s;
+    animation-delay: 2s;
+    opacity: 0;
+    animation-fill-mode: forwards; }
+  @keyframes nextAnim {
+    from {
+      transform: translateY(10px);
+      opacity: 0; }
+    to {
+      transform: translateY(0);
+      opacity: 1; } }
+  .about-me {
+    grid-column: 12/13;
+    grid-row: 9/11;
+    justify-self: center;
+    align-self: flex-end;
+    height: min-content;
+    margin-top: 80px; }
+  .about {
+    align-self: flex-end;
+    color: white;
+    font-size: 8rem;
+    line-height: 0.5;
+    font-family: neuehaasThin; }
+  .me {
+    color: white;
+    align-self: flex-start;
+    font-size: 17rem;
+    font-weight: bold;
+    line-height: 1;
+    font-family: neuehassLight; }
+  .myVideo {
+    width: 90%;
+    height: 80%; }
+  .backDrop {
+    position: absolute;
+    background-color: black;
+    width: 100%;
+    height: 100%;
+    z-index: 17; }
+  .clsBtn {
+    position: absolute;
+    top: 12%;
+    left: 90%;
+    transform: translate(-8%, -80%);
+    cursor: pointer;
+    z-index: 19; } }
+
+.contact-me {
+  width: calc(100vw - 80px);
+  height: calc(100vh - 100px);
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: repeat(12, 1fr);
+  background-color: transparent;
+  position: absolute;
+  color: white;
+  top: 100px;
+  transition: all 0.5s ease;
+  scroll-snap-align: start;
+  scroll-behavior: smooth; }
+
+.contact-me-message {
+  grid-column: 3/8;
+  grid-row: 3/8;
+  font-family: neuehassLight;
+  font-size: 7rem;
+  line-height: 1.1; }
+
+.contact-me-letsTalk {
+  grid-column: 6/7;
+  grid-row: 8/9;
+  font-size: 3.4rem;
+  align-self: flex-start; }
+
+.contact-me-letsTalk p {
+  font-size: neuehassBold;
+  font-weight: bold;
+  color: #fca51e; }
+
+.contact-me-boldArrow {
+  grid-column: 7/8;
+  grid-row: 8/9;
+  width: 60px;
+  height: 60px;
+  margin-left: 25px; }
+
+.contact-me-behence {
+  grid-column: 9 / 10;
+  grid-row: 8 / 9;
+  width: 100px;
+  height: 80px;
+  justify-self: end; }
+
+.contact-me-behence svg {
+  width: 100%;
+  height: 100%; }
+
+.contact-me-insta {
+  grid-column: 10/11;
+  grid-row: 8/9;
+  width: 100px;
+  height: 80px; }
+
+.contact-me-insta svg {
+  width: 100%;
+  height: 100%; }
+
+.contact-me-messageBox {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  grid-column: 9/11;
+  grid-row: 9/10; }
+
+.email-add {
+  grid-row: 1/2;
+  grid-column: 2/6;
+  align-self: flex-end; }
+
+.email-add p {
+  font-size: 1.5rem; }
+
+.phone-no {
+  grid-column: 2/6;
+  grid-row: 2/3;
+  align-self: center; }
+
+.phone-no p {
+  font-size: 1.5rem; }
+
+.email-icon {
+  grid-column: 1/2;
+  grid-row: 1/2;
+  width: 20px;
+  height: 20px;
+  align-self: flex-end;
+  justify-self: center; }
+
+.email-icon svg {
+  width: 100%;
+  height: 100%; }
+
+.phone-icon {
+  grid-column: 1/2;
+  grid-row: 2/ 3;
+  width: 18px;
+  height: 18px;
+  align-self: center;
+  justify-self: center; }
+
+.phone-icon svg {
+  width: 100%;
+  height: 100%; }
+
+.contact-me-back {
+  grid-column: 11/13;
+  grid-row: 10/12;
+  transform: rotateY(180deg); }
+
+.contact-me-back svg {
+  width: 100%;
+  height: 100%; }
+
+@media screen and (min-width: 1080px) and (max-width: 1280px) {
+  .contact-me-message {
+    grid-column: 3/8;
+    grid-row: 3/8;
+    font-family: neuehassLight;
+    font-size: 5.5rem;
+    line-height: 1.1; }
+  .contact-me-letsTalk {
+    grid-column: 5/7;
+    grid-row: 8/9;
+    font-size: 3.4rem;
+    align-self: flex-start;
+    justify-self: flex-end; }
+  .contact-me-letsTalk p {
+    font-size: neuehassBold;
+    font-weight: bold;
+    color: #fca51e; }
+  .contact-me-boldArrow {
+    grid-column: 7/8;
+    grid-row: 8/9;
+    width: 60px;
+    height: 60px;
+    margin-left: 25px; }
+  .contact-me-behence {
+    grid-column: 9 / 10;
+    grid-row: 8 / 9;
+    width: 80px;
+    height: 60px;
+    justify-self: flex-end;
+    align-self: flex-end;
+    position: absolute;
+    left: 35px; }
+  .contact-me-behence svg {
+    width: 100%;
+    height: 100%; }
+  .contact-me-insta {
+    grid-column: 10/11;
+    grid-row: 8/9;
+    width: 80px;
+    height: 60px;
+    align-self: flex-end;
+    justify-self: center;
+    position: absolute;
+    left: 20px; }
+  .contact-me-insta svg {
+    width: 100%;
+    height: 100%; }
+  .contact-me-messageBox {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-column: 9/11;
+    grid-row: 9/10; }
+  .email-add {
+    grid-row: 1/2;
+    grid-column: 2/6;
+    align-self: flex-end; }
+  .email-add p {
+    font-size: 1.5rem; }
+  .phone-no {
+    grid-column: 2/6;
+    grid-row: 2/3;
+    align-self: center; }
+  .phone-no p {
+    font-size: 1.5rem; }
+  .email-icon {
+    grid-column: 1/2;
+    grid-row: 1/2;
+    width: 20px;
+    height: 20px;
+    align-self: flex-end;
+    justify-self: flex-start; }
+  .email-icon svg {
+    width: 100%;
+    height: 100%; }
+  .phone-icon {
+    grid-column: 1/2;
+    grid-row: 2/ 3;
+    width: 18px;
+    height: 18px;
+    align-self: center;
+    justify-self: flex-start; }
+  .phone-icon svg {
+    width: 100%;
+    height: 100%; }
+  .contact-me-back {
+    grid-column: 11/13;
+    grid-row: 10/12;
+    transform: rotateY(180deg); }
+  .contact-me-back svg {
+    width: 100%;
+    height: 100%; } }
+
+@media screen and (min-width: 1281px) and (max-width: 1366px) {
+  .contact-me-message {
+    grid-column: 3/8;
+    grid-row: 3/8;
+    font-family: neuehassLight;
+    font-size: 5rem;
+    line-height: 1.1; }
+  .contact-me-letsTalk {
+    grid-column: 5/7;
+    grid-row: 8/9;
+    font-size: 3.4rem;
+    align-self: flex-start;
+    justify-self: flex-end; }
+  .contact-me-letsTalk p {
+    font-size: neuehassBold;
+    font-weight: bold;
+    color: #fca51e; }
+  .contact-me-boldArrow {
+    grid-column: 7/8;
+    grid-row: 8/9;
+    width: 60px;
+    height: 60px;
+    margin-left: 25px; }
+  .contact-me-behence {
+    grid-column: 9 / 10;
+    grid-row: 8 / 9;
+    width: 80px;
+    height: 60px;
+    justify-self: flex-end;
+    align-self: flex-end;
+    position: absolute;
+    left: 35px; }
+  .contact-me-behence svg {
+    width: 100%;
+    height: 100%; }
+  .contact-me-insta {
+    grid-column: 10/11;
+    grid-row: 8/9;
+    width: 80px;
+    height: 60px;
+    align-self: flex-end;
+    justify-self: center;
+    position: absolute;
+    left: 10px; }
+  .contact-me-insta svg {
+    width: 100%;
+    height: 100%; }
+  .contact-me-messageBox {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-column: 9/11;
+    grid-row: 9/10; }
+  .email-add {
+    grid-row: 1/2;
+    grid-column: 2/6;
+    align-self: flex-end; }
+  .email-add p {
+    font-size: 1.5rem; }
+  .phone-no {
+    grid-column: 2/6;
+    grid-row: 2/3;
+    align-self: center; }
+  .phone-no p {
+    font-size: 1.5rem; }
+  .email-icon {
+    grid-column: 1/2;
+    grid-row: 1/2;
+    width: 20px;
+    height: 20px;
+    align-self: flex-end;
+    justify-self: flex-start; }
+  .email-icon svg {
+    width: 100%;
+    height: 100%; }
+  .phone-icon {
+    grid-column: 1/2;
+    grid-row: 2/ 3;
+    width: 18px;
+    height: 18px;
+    align-self: center;
+    justify-self: flex-start; }
+  .phone-icon svg {
+    width: 100%;
+    height: 100%; }
+  .contact-me-back {
+    grid-column: 11/13;
+    grid-row: 10/12;
+    transform: rotateY(180deg); }
+  .contact-me-back svg {
+    width: 100%;
+    height: 100%; } }
+
+@media screen and (min-width: 1367px) and (max-width: 1600px) {
+  .contact-me-message {
+    grid-column: 3/8;
+    grid-row: 3/8;
+    font-family: neuehassLight;
+    font-size: 5.5rem;
+    line-height: 1.1; }
+  .contact-me-letsTalk {
+    grid-column: 5/7;
+    grid-row: 8/9;
+    margin-top: -10px;
+    align-self: flex-start;
+    justify-self: flex-end; }
+  .contact-me-letsTalk p {
+    font-size: neuehassBold;
+    font-weight: bold;
+    color: #fca51e;
+    font-size: 3.4rem; }
+  .contact-me-boldArrow {
+    grid-column: 7/8;
+    grid-row: 8/9;
+    width: 60px;
+    height: 60px;
+    margin-left: 25px; }
+  .contact-me-behence {
+    grid-column: 9 / 10;
+    grid-row: 8 / 9;
+    width: 80px;
+    height: 60px;
+    justify-self: flex-end;
+    align-self: flex-end;
+    position: absolute;
+    left: 45px; }
+  .contact-me-behence svg {
+    width: 100%;
+    height: 100%; }
+  .contact-me-insta {
+    grid-column: 10/11;
+    grid-row: 8/9;
+    width: 80px;
+    height: 60px;
+    align-self: flex-end;
+    justify-self: center;
+    position: absolute;
+    left: 0; }
+  .contact-me-insta svg {
+    width: 100%;
+    height: 100%; }
+  .contact-me-messageBox {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-column: 9/11;
+    grid-row: 9/10; }
+  .email-add {
+    grid-row: 1/2;
+    grid-column: 2/6;
+    align-self: flex-end; }
+  .email-add p {
+    font-size: 1.5rem; }
+  .phone-no {
+    grid-column: 2/6;
+    grid-row: 2/3;
+    align-self: center; }
+  .phone-no p {
+    font-size: 1.5rem; }
+  .email-icon {
+    grid-column: 1/2;
+    grid-row: 1/2;
+    width: 20px;
+    height: 20px;
+    align-self: flex-end;
+    justify-self: flex-start; }
+  .email-icon svg {
+    width: 100%;
+    height: 100%; }
+  .phone-icon {
+    grid-column: 1/2;
+    grid-row: 2/ 3;
+    width: 18px;
+    height: 18px;
+    align-self: center;
+    justify-self: flex-start; }
+  .phone-icon svg {
+    width: 100%;
+    height: 100%; }
+  .contact-me-back {
+    grid-column: 11/13;
+    grid-row: 10/12;
+    transform: rotateY(180deg); }
+  .contact-me-back svg {
+    width: 100%;
+    height: 100%; } }
+
+@media screen and (min-width: 1921px) and (max-width: 2560px) {
+  .contact-me-message {
+    grid-column: 3/7;
+    grid-row: 3/8;
+    font-family: neuehassLight;
+    font-size: 9rem;
+    line-height: 1.1; }
+  .contact-me-letsTalk {
+    grid-column: 5/7;
+    grid-row: 8/9;
+    margin-top: -10px;
+    align-self: flex-start;
+    justify-self: flex-end; }
+  .contact-me-letsTalk p {
+    font-size: neuehassBold;
+    font-weight: bold;
+    color: #fca51e;
+    font-size: 5rem; }
+  .contact-me-boldArrow {
+    grid-column: 7/8;
+    grid-row: 8/9;
+    width: 90px;
+    height: 106px;
+    margin-left: 25px; }
+  .contact-me-boldArrow svg {
+    width: 100%;
+    height: 100%; }
+  .contact-me-behence {
+    grid-column: 9 / 10;
+    grid-row: 8 / 9;
+    width: 131px;
+    height: 100px;
+    justify-self: flex-end;
+    align-self: flex-end;
+    position: absolute; }
+  .contact-me-behence svg {
+    width: 100%;
+    height: 100%; }
+  .contact-me-insta {
+    grid-column: 10/11;
+    grid-row: 8/9;
+    width: 130px;
+    height: 100px;
+    align-self: flex-end;
+    justify-self: center;
+    position: absolute;
+    left: 0; }
+  .contact-me-insta svg {
+    width: 100%;
+    height: 100%; }
+  .contact-me-messageBox {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-column: 9/11;
+    grid-row: 9/10; }
+  .email-add {
+    grid-row: 1/2;
+    grid-column: 2/6;
+    align-self: flex-end;
+    justify-self: flex-start; }
+  .email-add p {
+    font-size: 2.5rem; }
+  .phone-no {
+    grid-column: 2/6;
+    grid-row: 2/3;
+    align-self: center; }
+  .phone-no p {
+    font-size: 2.5rem; }
+  .email-icon {
+    grid-column: 1/2;
+    grid-row: 1/2;
+    width: 35px;
+    height: 35px;
+    align-self: flex-end;
+    justify-self: flex-start; }
+  .email-icon svg {
+    width: 100%;
+    height: 100%; }
+  .phone-icon {
+    grid-column: 1/2;
+    grid-row: 2/ 3;
+    width: 35px;
+    height: 35px;
+    align-self: center;
+    justify-self: flex-start; }
+  .phone-icon svg {
+    width: 100%;
+    height: 100%; }
+  .contact-me-back {
+    grid-column: 11/13;
+    grid-row: 10/12;
+    transform: rotateY(180deg); }
+  .contact-me-back svg {
+    width: 100%;
+    height: 100%; } }
+
+@media screen and (min-width: 2561px) and (max-width: 3440px) {
+  .contact-me-message {
+    grid-column: 3/7;
+    grid-row: 3/8;
+    font-family: neuehassLight;
+    font-size: 9.5rem;
+    line-height: 1.1; }
+  .contact-me-letsTalk {
+    grid-column: 5/7;
+    grid-row: 8/9;
+    margin-top: -10px;
+    align-self: flex-start;
+    justify-self: flex-end; }
+  .contact-me-letsTalk p {
+    font-size: neuehassBold;
+    font-weight: bold;
+    color: #fca51e;
+    font-size: 5rem; }
+  .contact-me-boldArrow {
+    grid-column: 7/8;
+    grid-row: 8/9;
+    width: 90px;
+    height: 106px;
+    margin-left: 25px; }
+  .contact-me-boldArrow svg {
+    width: 100%;
+    height: 100%; }
+  .contact-me-behence {
+    grid-column: 9 / 10;
+    grid-row: 8 / 9;
+    width: 131px;
+    height: 100px;
+    justify-self: flex-end;
+    align-self: flex-end;
+    position: absolute; }
+  .contact-me-behence svg {
+    width: 100%;
+    height: 100%; }
+  .contact-me-insta {
+    grid-column: 10/11;
+    grid-row: 8/9;
+    width: 130px;
+    height: 100px;
+    align-self: flex-end;
+    justify-self: center;
+    position: absolute;
+    left: 0; }
+  .contact-me-insta svg {
+    width: 100%;
+    height: 100%; }
+  .contact-me-messageBox {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-column: 9/11;
+    grid-row: 9/10;
+    position: relative; }
+  .email-add {
+    grid-row: 1/2;
+    grid-column: 2/6;
+    align-self: flex-end;
+    justify-self: flex-start;
+    position: absolute;
+    left: 50px; }
+  .email-add p {
+    font-size: 2.5rem; }
+  .phone-no {
+    grid-column: 2/6;
+    grid-row: 2/3;
+    align-self: center;
+    position: absolute;
+    left: 50px; }
+  .phone-no p {
+    font-size: 2.5rem; }
+  .email-icon {
+    grid-column: 1/2;
+    grid-row: 1/2;
+    width: 35px;
+    height: 35px;
+    align-self: flex-end;
+    justify-self: flex-end; }
+  .email-icon svg {
+    width: 100%;
+    height: 100%; }
+  .phone-icon {
+    grid-column: 1/2;
+    grid-row: 2/ 3;
+    width: 35px;
+    height: 35px;
+    align-self: center;
+    justify-self: flex-end; }
+  .phone-icon svg {
+    width: 100%;
+    height: 100%; }
+  .contact-me-back {
+    grid-column: 11/13;
+    grid-row: 10/12;
+    transform: rotateY(180deg); }
+  .contact-me-back svg {
+    width: 100%;
+    height: 100%; } }
+
+@media screen and (min-width: 3441px) and (max-width: 3840px) {
+  .contact-me-message {
+    grid-column: 3/7;
+    grid-row: 3/8;
+    font-family: neuehassLight;
+    font-size: 13.5rem;
+    line-height: 1.1; }
+  .contact-me-letsTalk {
+    grid-column: 5/7;
+    grid-row: 8/9;
+    margin-top: -25px;
+    align-self: flex-start;
+    justify-self: flex-end; }
+  .contact-me-letsTalk p {
+    font-size: neuehassBold;
+    font-weight: bold;
+    color: #fca51e;
+    font-size: 8rem; }
+  .contact-me-boldArrow {
+    grid-column: 7/8;
+    grid-row: 8/9;
+    width: 120px;
+    height: 120px;
+    margin-left: 25px; }
+  .contact-me-boldArrow svg {
+    width: 100%;
+    height: 100%; }
+  .contact-me-behence {
+    grid-column: 9 / 10;
+    grid-row: 8 / 9;
+    width: 160px;
+    height: 130px;
+    justify-self: flex-end;
+    align-self: flex-end;
+    position: absolute; }
+  .contact-me-behence svg {
+    width: 100%;
+    height: 100%; }
+  .contact-me-insta {
+    grid-column: 10/11;
+    grid-row: 8/9;
+    width: 150px;
+    height: 120px;
+    align-self: flex-end;
+    justify-self: center;
+    position: absolute;
+    left: 10px; }
+  .contact-me-insta svg {
+    width: 100%;
+    height: 100%; }
+  .contact-me-messageBox {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-column: 9/11;
+    grid-row: 9/10;
+    position: relative; }
+  .email-add {
+    grid-row: 1/2;
+    grid-column: 2/6;
+    align-self: flex-end;
+    justify-self: flex-start;
+    position: absolute;
+    left: 50px; }
+  .email-add p {
+    font-size: 3.1rem; }
+  .phone-no {
+    grid-column: 2/6;
+    grid-row: 2/3;
+    align-self: center;
+    position: absolute;
+    left: 50px; }
+  .phone-no p {
+    font-size: 3.1rem; }
+  .email-icon {
+    grid-column: 1/2;
+    grid-row: 1/2;
+    width: 40px;
+    height: 40px;
+    align-self: flex-end;
+    justify-self: flex-end; }
+  .email-icon svg {
+    width: 100%;
+    height: 100%; }
+  .phone-icon {
+    grid-column: 1/2;
+    grid-row: 2/ 3;
+    width: 40px;
+    height: 40px;
+    align-self: center;
+    justify-self: flex-end; }
+  .phone-icon svg {
+    width: 100%;
+    height: 100%; }
+  .contact-me-back {
+    grid-column: 11/13;
+    grid-row: 10/12;
+    transform: rotateY(180deg); }
+  .contact-me-back svg {
+    width: 100%;
+    height: 100%; } }
+
+@media screen and (max-width: 375px) {
+  .desktop-laptop {
+    display: none; }
+  .mobile-tab {
+    display: block;
+    background-color: black; }
+  .mob-header {
+    width: 100%;
+    height: 80px;
+    background-color: white; }
+  .mob-headerBox {
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between; }
+  .mob-logo {
+    width: 115px;
+    height: 50px;
+    position: relative; }
+  .mob-logo svg {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    position: absolute;
+    top: -52px;
+    left: -43px; }
+  .navBar {
+    width: 50px;
+    height: 20px; } }
+
+@media screen and (max-width: 375px) {
+  .desktop-laptop {
+    display: none; }
+  .mobile-tab {
+    display: block; }
+  .mobile-home {
+    width: 100%;
+    height: 325px;
+    background-color: black; }
+  .mobile-home-box {
+    width: 80%;
+    margin: 0 auto;
+    height: 100%;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(6, 1fr);
+    gap: 5px; }
+  .mobile-home-box p:nth-child(1) {
+    grid-column: 1/2;
+    grid-row: 2/3;
+    font-size: 3rem;
+    color: white;
+    align-self: flex-end;
+    line-height: 1;
+    font-family: neuehaasThin; }
+  .mobile-home-box p:nth-child(2) {
+    grid-column: 1/6;
+    grid-row: 3/4;
+    color: white;
+    font-size: 7.1rem;
+    align-self: flex-start;
+    line-height: 0.7;
+    font-family: neuehassLight; }
+  .mobile-boldArrow {
+    grid-column: 3/5;
+    grid-row: 4/6;
+    height: 60px;
+    width: 65px;
+    align-self: center;
+    justify-self: end; }
+  .mobile-boldArrow svg {
+    width: 100%;
+    height: 100%; }
+  .mobile-whatIdo {
+    grid-column: 5/7;
+    grid-row: 4/6;
+    height: 65px;
+    width: 93px;
+    align-self: center;
+    font-size: 10px; }
+  .mobile-whatIdo p:nth-child(1) {
+    font-size: 1.8rem;
+    color: white;
+    line-height: 1.2;
+    font-family: neuehaasThin; }
+  .mobile-whatIdo p:nth-child(2) {
+    font-size: 1.8rem;
+    color: white;
+    line-height: 1.2;
+    font-family: neuehaasThin; }
+  .mobile-whatIdo p:nth-child(3) {
+    font-size: 1.8rem;
+    color: white;
+    line-height: 1.2;
+    font-family: neuehaasThin; } }
+
+@media screen and (max-width: 375px) {
+  .desktop-laptop {
+    display: none; }
+  .mobile-tab {
+    display: block; }
+  .mobile-myWork {
+    width: 100%; }
+  .mobile-myWork-box {
+    width: 80%;
+    margin: 0 auto; }
+  .mobile-packaging {
+    width: 100%; }
+  .mobile-packaging-MainBox {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    position: relative; }
+  .mobile-packaging p:nth-child(1) {
+    font-size: 2rem;
+    color: white;
+    margin-bottom: 10px; }
+  .mobile-packaging-box {
+    width: 145px;
+    height: 100px;
+    margin-bottom: 10px; }
+  .mobile-packaging-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center; }
+  .mobile-video {
+    width: 100%; }
+  .mobile-video p {
+    font-size: 2rem;
+    color: white;
+    margin-bottom: 10px;
+    margin-top: 20px; }
+  .mobile-video-mainbox {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between; }
+  .mobile-video-box {
+    width: 145px;
+    height: 100px;
+    margin-bottom: 10px;
+    position: relative; }
+  .mobile-video-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center; }
+  .play-icon {
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); }
+  .play-icon svg {
+    width: 100%;
+    height: 100%;
+    fill: white; }
+  .mobile-threeD {
+    width: 100%; }
+  .mobile-threeD p {
+    font-size: 2rem;
+    color: white;
+    margin-bottom: 10px;
+    margin-top: 25px; }
+  .mobile-threeD-mainbox {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between; }
+  .mobile-threeD-box {
+    width: 145px;
+    height: 100px;
+    margin-bottom: 10px; }
+  .mobile-threeD-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center; }
+  .mobile-packaging-blur {
+    width: 100vw;
+    height: 100vh;
+    backdrop-filter: brightness(10%);
+    position: absolute;
+    z-index: 5;
+    top: 0;
+    left: 0; }
+  .mobile-packaging-full {
+    width: 100%;
+    height: 350px;
+    background-color: red;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 6;
+    overflow: scroll; }
+  .mob-clsBtn {
+    position: absolute;
+    top: -20px;
+    right: 0;
+    color: white;
+    background-color: green;
+    z-index: 8;
+    font-size: 20px;
+    padding: 10px; }
+  .mobile-packaging-full-box {
+    width: 100%;
+    height: 200px; }
+  .mobile-packaging-full-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center; }
+  .mobile-packaging-full.mob-hide {
+    display: none; }
+  .clsBtn.mob-hide {
+    display: none; }
+  .mob-hide {
+    display: none; } }

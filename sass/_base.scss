@@ -1,0 +1,35 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+@font-face {
+  font-family: neuehaasblack;
+  src: url(/fonts/neuehaas_black.ttf);
+}
+
+@font-face {
+  font-family: neueRegular;
+  src: url(/fonts/neuehaas_regular.ttf);
+}
+
+@font-face {
+  font-family: neuehaasThin;
+  src: url(/fonts/neuehaas_thin.ttf);
+}
+
+@font-face {
+  font-family: neuehassLight;
+  src: url(/fonts/neuehaas_light.ttf);
+}
+
+@font-face {
+  font-family: neuehassBold;
+  src: url(/fonts/neuehaas_bold.ttf);
+}
+
+html {
+  font-family: neueRegular;
+  font-size: 62.5%;
+}

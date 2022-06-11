@@ -1,0 +1,50 @@
+@media screen and (max-width: 375px) {
+    .desktop-laptop {
+        display: none;
+    }
+    .mobile-tab {
+        display: block;
+        background-color: black;
+    }    
+
+    .mob-header {
+        width: 100%;
+        height: 80px;
+        background-color: white;
+    }
+
+    .mob-headerBox {
+        width: 80%;
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        // background-color: red;
+   
+    }
+
+    .mob-logo {
+        width: 115px;
+        height: 50px;
+        position: relative;
+        // background-color: green;       
+    }
+
+    .mob-logo svg {
+        width: 150px;
+        height: 150px;
+        object-fit: cover;
+        position: absolute;
+        top: -52px;
+        left: -43px;
+    }
+
+    .navBar {
+        width: 50px;
+        height: 20px;
+    }   
+   
+}
+
+
+

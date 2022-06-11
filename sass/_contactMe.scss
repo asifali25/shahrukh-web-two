@@ -1,0 +1,1011 @@
+.contact-me {
+  width: calc(100vw - 80px);
+  height: calc(100vh - 100px);
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: repeat(12, 1fr);
+  // background-color: red;
+  background-color: transparent;
+  position: absolute;
+  color: white;
+  top: 100px;
+  transition: all 0.5s ease;
+  scroll-snap-align: start;
+  scroll-behavior: smooth;
+
+}
+
+.contact-me-message {
+  grid-column: 3/8;
+  grid-row: 3/8;
+  font-family: neuehassLight;
+  font-size: 7rem;
+  line-height: 1.1;
+}
+
+.contact-me-letsTalk {
+  grid-column: 6/7;
+  grid-row: 8/9;
+  font-size: 3.4rem;
+  align-self: flex-start;
+}
+
+.contact-me-letsTalk p {
+  font-size: neuehassBold;
+  font-weight: bold;
+  color: #fca51e;
+}
+
+.contact-me-boldArrow {
+  grid-column: 7/8;
+  grid-row: 8/9;
+  width: 60px;
+  height: 60px;
+  margin-left: 25px;
+  // justify-self: center;
+  // background-color: red;
+}
+
+.contact-me-behence {
+  grid-column: 9 / 10;
+  grid-row: 8 / 9;
+  width: 100px;
+  height: 80px;
+  justify-self: end;
+}
+
+.contact-me-behence svg {
+  width: 100%;
+  height: 100%;
+}
+
+.contact-me-insta {
+  grid-column: 10/11;
+  grid-row: 8/9;
+  width: 100px;
+  height: 80px;
+}
+
+.contact-me-insta svg {
+  width: 100%;
+  height: 100%;
+}
+
+.contact-me-messageBox {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  grid-column: 9/11;
+  grid-row: 9/10;
+  // background-color: red;
+}
+
+.email-add {
+  grid-row: 1/2;
+  grid-column: 2/6;
+  align-self: flex-end;
+}
+
+.email-add p {
+  font-size: 1.5rem;
+}
+
+.phone-no {
+  grid-column: 2/6;
+  grid-row: 2/3;
+  align-self: center;
+}
+
+.phone-no p {
+  font-size: 1.5rem;
+}
+
+.email-icon {
+  grid-column: 1/2;
+  grid-row: 1/2;
+  width: 20px;
+  height: 20px;
+  align-self: flex-end;
+  justify-self: center;
+}
+
+.email-icon svg {
+  width: 100%;
+  height: 100%;
+}
+
+.phone-icon {
+  grid-column: 1/2;
+  grid-row: 2/ 3;
+  width: 18px;
+  height: 18px;
+  align-self: center;
+  justify-self: center;
+}
+
+.phone-icon svg {
+  width: 100%;
+  height: 100%;
+}
+
+.contact-me-back {
+  grid-column: 11/13;
+  grid-row: 10/12;
+  transform: rotateY(180deg);
+}
+
+.contact-me-back svg {
+  width: 100%;
+  height: 100%;
+}
+
+@media screen and (min-width: 1080px) and (max-width: 1280px) {
+
+  .contact-me-message {
+    grid-column: 3/8;
+    grid-row: 3/8;
+    font-family: neuehassLight;
+    font-size: 5.5rem;
+    line-height: 1.1;
+    // background-color: red                             ;
+  }
+  
+  .contact-me-letsTalk {
+    grid-column: 5/7;
+    grid-row: 8/9;
+    font-size: 3.4rem;
+    align-self: flex-start;
+    justify-self: flex-end;
+  }
+  
+  .contact-me-letsTalk p {
+    font-size: neuehassBold;
+    font-weight: bold;
+    color: #fca51e;
+  }
+  
+  .contact-me-boldArrow {
+    grid-column: 7/8;
+    grid-row: 8/9;
+    width: 60px;
+    height: 60px;
+    margin-left: 25px;
+    // justify-self: center;
+    // background-color: red;
+  }
+  
+  .contact-me-behence {
+    grid-column: 9 / 10;
+    grid-row: 8 / 9;
+    width: 80px;
+    height: 60px;
+    justify-self: flex-end;
+    align-self: flex-end;
+    position: absolute;
+    left: 35px;
+    // background-color: red;
+  }
+  
+  .contact-me-behence svg {
+    width: 100%;
+    height: 100%;
+  }
+  
+  .contact-me-insta {
+    grid-column: 10/11;
+    grid-row: 8/9;
+    width: 80px;
+    height: 60px;
+    align-self: flex-end;
+    justify-self: center;
+    position: absolute;
+    left: 20px;
+    // background-color: green;
+
+  }
+  
+  .contact-me-insta svg {
+    width: 100%;
+    height: 100%;
+  }
+  
+  .contact-me-messageBox {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-column: 9/11;
+    grid-row: 9/10;
+    // background-color: red;
+  }
+  
+  .email-add {
+    grid-row: 1/2;
+    grid-column: 2/6;
+    align-self: flex-end;
+  }
+  
+  .email-add p {
+    font-size: 1.5rem;
+  }
+  
+  .phone-no {
+    grid-column: 2/6;
+    grid-row: 2/3;
+    align-self: center;
+  }
+  
+  .phone-no p {
+    font-size: 1.5rem;
+  }
+  
+  .email-icon {
+    grid-column: 1/2;
+    grid-row: 1/2;
+    width: 20px;
+    height: 20px;
+    align-self: flex-end;
+    justify-self: flex-start;
+  }
+  
+  .email-icon svg {
+    width: 100%;
+    height: 100%;
+  }
+  
+  .phone-icon {
+    grid-column: 1/2;
+    grid-row: 2/ 3;
+    width: 18px;
+    height: 18px;
+    align-self: center;
+    justify-self: flex-start;
+  }
+  
+  .phone-icon svg {
+    width: 100%;
+    height: 100%;
+  }
+  
+  .contact-me-back {
+    grid-column: 11/13;
+    grid-row: 10/12;
+    transform: rotateY(180deg);
+  }
+  
+  .contact-me-back svg {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+
+@media screen and (min-width: 1281px) and (max-width: 1366px) {
+
+  .contact-me-message {
+    grid-column: 3/8;
+    grid-row: 3/8;
+    font-family: neuehassLight;
+    font-size: 5rem;
+    line-height: 1.1;
+    // background-color: red                             ;
+  }
+  
+  .contact-me-letsTalk {
+    grid-column: 5/7;
+    grid-row: 8/9;
+    font-size: 3.4rem;
+    align-self: flex-start;
+    justify-self: flex-end;
+  }
+  
+  .contact-me-letsTalk p {
+    font-size: neuehassBold;
+    font-weight: bold;
+    color: #fca51e;
+  }
+  
+  .contact-me-boldArrow {
+    grid-column: 7/8;
+    grid-row: 8/9;
+    width: 60px;
+    height: 60px;
+    margin-left: 25px;
+    // justify-self: center;
+    // background-color: red;
+  }
+  
+  .contact-me-behence {
+    grid-column: 9 / 10;
+    grid-row: 8 / 9;
+    width: 80px;
+    height: 60px;
+    justify-self: flex-end;
+    align-self: flex-end;
+    position: absolute;
+    left: 35px;
+    // background-color: red;
+  }
+  
+  .contact-me-behence svg {
+    width: 100%;
+    height: 100%;
+  }
+  
+  .contact-me-insta {
+    grid-column: 10/11;
+    grid-row: 8/9;
+    width: 80px;
+    height: 60px;
+    align-self: flex-end;
+    justify-self: center;
+    position: absolute;
+    left: 10px;
+    // background-color: green;
+
+  }
+  
+  .contact-me-insta svg {
+    width: 100%;
+    height: 100%;
+  }
+  
+  .contact-me-messageBox {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-column: 9/11;
+    grid-row: 9/10;
+    // background-color: red;
+  }
+  
+  .email-add {
+    grid-row: 1/2;
+    grid-column: 2/6;
+    align-self: flex-end;
+  }
+  
+  .email-add p {
+    font-size: 1.5rem;
+  }
+  
+  .phone-no {
+    grid-column: 2/6;
+    grid-row: 2/3;
+    align-self: center;
+  }
+  
+  .phone-no p {
+    font-size: 1.5rem;
+  }
+  
+  .email-icon {
+    grid-column: 1/2;
+    grid-row: 1/2;
+    width: 20px;
+    height: 20px;
+    align-self: flex-end;
+    justify-self: flex-start;
+  }
+  
+  .email-icon svg {
+    width: 100%;
+    height: 100%;
+  }
+  
+  .phone-icon {
+    grid-column: 1/2;
+    grid-row: 2/ 3;
+    width: 18px;
+    height: 18px;
+    align-self: center;
+    justify-self: flex-start;
+  }
+  
+  .phone-icon svg {
+    width: 100%;
+    height: 100%;
+  }
+  
+  .contact-me-back {
+    grid-column: 11/13;
+    grid-row: 10/12;
+    transform: rotateY(180deg);
+  }
+  
+  .contact-me-back svg {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+@media screen and (min-width: 1367px) and (max-width: 1600px) {
+
+  .contact-me-message {
+    grid-column: 3/8;
+    grid-row: 3/8;
+    font-family: neuehassLight;
+    font-size: 5.5rem;
+    line-height: 1.1;
+    // background-color: red;
+  }
+  
+  .contact-me-letsTalk {
+    grid-column: 5/7;
+    grid-row: 8/9;
+    margin-top: -10px;    
+    align-self: flex-start;
+    justify-self: flex-end;
+    // background-color: red;
+  }
+  
+  .contact-me-letsTalk p {
+    font-size: neuehassBold;
+    font-weight: bold;
+    color: #fca51e;
+    font-size: 3.4rem;
+  }
+  
+  .contact-me-boldArrow {
+    grid-column: 7/8;
+    grid-row: 8/9;
+    width: 60px;
+    height: 60px;
+    margin-left: 25px;
+    // justify-self: center;
+    // background-color: red;
+  }
+  
+  .contact-me-behence {
+    grid-column: 9 / 10;
+    grid-row: 8 / 9;
+    width: 80px;
+    height: 60px;
+    justify-self: flex-end;
+    align-self: flex-end;
+    position: absolute;
+    left: 45px;
+    // background-color: red;
+  }
+  
+  .contact-me-behence svg {
+    width: 100%;
+    height: 100%;
+  }
+  
+  .contact-me-insta {
+    grid-column: 10/11;
+    grid-row: 8/9;
+    width: 80px;
+    height: 60px;
+    align-self: flex-end;
+    justify-self: center;
+    position: absolute;
+    left: 0;
+    // background-color: green;
+
+  }
+  
+  .contact-me-insta svg {
+    width: 100%;
+    height: 100%;
+  }
+  
+  .contact-me-messageBox {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-column: 9/11;
+    grid-row: 9/10;
+    // background-color: red;
+  }
+  
+  .email-add {
+    grid-row: 1/2;
+    grid-column: 2/6;
+    align-self: flex-end;
+  }
+  
+  .email-add p {
+    font-size: 1.5rem;
+  }
+  
+  .phone-no {
+    grid-column: 2/6;
+    grid-row: 2/3;
+    align-self: center;
+  }
+  
+  .phone-no p {
+    font-size: 1.5rem;
+  }
+  
+  .email-icon {
+    grid-column: 1/2;
+    grid-row: 1/2;
+    width: 20px;
+    height: 20px;
+    align-self: flex-end;
+    justify-self: flex-start;
+  }
+  
+  .email-icon svg {
+    width: 100%;
+    height: 100%;
+  }
+  
+  .phone-icon {
+    grid-column: 1/2;
+    grid-row: 2/ 3;
+    width: 18px;
+    height: 18px;
+    align-self: center;
+    justify-self: flex-start;
+  }
+  
+  .phone-icon svg {
+    width: 100%;
+    height: 100%;
+  }
+  
+  .contact-me-back {
+    grid-column: 11/13;
+    grid-row: 10/12;
+    transform: rotateY(180deg);
+  }
+  
+  .contact-me-back svg {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+@media screen and (min-width: 1921px) and (max-width: 2560px) {
+
+  .contact-me-message {
+    grid-column: 3/7;
+    grid-row: 3/8;
+    font-family: neuehassLight;
+    font-size: 9rem;
+    line-height: 1.1;
+    // background-color: red;
+  }
+  
+  .contact-me-letsTalk {
+    grid-column: 5/7;
+    grid-row: 8/9;
+    margin-top: -10px;    
+    align-self: flex-start;
+    justify-self: flex-end;
+    // background-color: red;
+  }
+  
+  .contact-me-letsTalk p {
+    font-size: neuehassBold;
+    font-weight: bold;
+    color: #fca51e;
+    font-size: 5rem;
+  }
+  
+  .contact-me-boldArrow {
+    grid-column: 7/8;
+    grid-row: 8/9;
+    width: 90px;
+    height: 106px;
+    margin-left: 25px;
+    // justify-self: center;
+    // background-color: red;
+  }
+
+  .contact-me-boldArrow svg {
+    width: 100%;
+    height: 100%;
+  }
+  
+  .contact-me-behence {
+    grid-column: 9 / 10;
+    grid-row: 8 / 9;
+    width: 131px;
+    height: 100px;
+    justify-self: flex-end;
+    align-self: flex-end;
+    position: absolute;
+    // left: 45px;
+    // background-color: red;
+  }
+  
+  .contact-me-behence svg {
+    width: 100%;
+    height: 100%;
+  }
+  
+  .contact-me-insta {
+    grid-column: 10/11;
+    grid-row: 8/9;
+    width: 130px;
+    height: 100px;
+    align-self: flex-end;
+    justify-self: center;
+    position: absolute;
+    left: 0;
+    // background-color: green;
+
+  }
+  
+  .contact-me-insta svg {
+    width: 100%;
+    height: 100%;
+  }
+  
+  .contact-me-messageBox {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-column: 9/11;
+    grid-row: 9/10;
+    // background-color: red;
+  }
+  
+  .email-add {
+    grid-row: 1/2;
+    grid-column: 2/6;
+    align-self: flex-end;
+    justify-self: flex-start;
+  }
+  
+  .email-add p {
+    font-size: 2.5rem;
+  }
+  
+  .phone-no {
+    grid-column: 2/6;
+    grid-row: 2/3;
+    align-self: center;
+  }
+  
+  .phone-no p {
+    font-size: 2.5rem;
+  }
+  
+  .email-icon {
+    grid-column: 1/2;
+    grid-row: 1/2;
+    width: 35px;
+    height: 35px;
+    align-self: flex-end;
+    justify-self: flex-start;
+  }
+  
+  .email-icon svg {
+    width: 100%;
+    height: 100%;
+  }
+  
+  .phone-icon {
+    grid-column: 1/2;
+    grid-row: 2/ 3;
+    width: 35px;
+    height: 35px;
+    align-self: center;
+    justify-self: flex-start;
+  }
+  
+  .phone-icon svg {
+    width: 100%;
+    height: 100%;
+  }
+  
+  .contact-me-back {
+    grid-column: 11/13;
+    grid-row: 10/12;
+    transform: rotateY(180deg);
+  }
+  
+  .contact-me-back svg {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+@media screen and (min-width: 2561px) and (max-width: 3440px) {
+
+  .contact-me-message {
+    grid-column: 3/7;
+    grid-row: 3/8;
+    font-family: neuehassLight;
+    font-size: 9.5rem;
+    line-height: 1.1;
+    // background-color: red;
+  }
+  
+  .contact-me-letsTalk {
+    grid-column: 5/7;
+    grid-row: 8/9;
+    margin-top: -10px;    
+    align-self: flex-start;
+    justify-self: flex-end;
+    // background-color: red;
+  }
+  
+  .contact-me-letsTalk p {
+    font-size: neuehassBold;
+    font-weight: bold;
+    color: #fca51e;
+    font-size: 5rem;
+  }
+  
+  .contact-me-boldArrow {
+    grid-column: 7/8;
+    grid-row: 8/9;
+    width: 90px;
+    height: 106px;
+    margin-left: 25px;
+    // justify-self: center;
+    // background-color: red;
+  }
+
+  .contact-me-boldArrow svg {
+    width: 100%;
+    height: 100%;
+  }
+  
+  .contact-me-behence {
+    grid-column: 9 / 10;
+    grid-row: 8 / 9;
+    width: 131px;
+    height: 100px;
+    justify-self: flex-end;
+    align-self: flex-end;
+    position: absolute;
+    // left: 45px;
+    // background-color: red;
+  }
+  
+  .contact-me-behence svg {
+    width: 100%;
+    height: 100%;
+  }
+  
+  .contact-me-insta {
+    grid-column: 10/11;
+    grid-row: 8/9;
+    width: 130px;
+    height: 100px;
+    align-self: flex-end;
+    justify-self: center;
+    position: absolute;
+    left: 0;
+    // background-color: green;
+
+  }
+  
+  .contact-me-insta svg {
+    width: 100%;
+    height: 100%;
+  }
+  
+  .contact-me-messageBox {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-column: 9/11;
+    grid-row: 9/10;
+    // background-color: red;
+    position: relative;
+  }
+  
+  .email-add {
+    grid-row: 1/2;
+    grid-column: 2/6;
+    align-self: flex-end;
+    justify-self: flex-start;
+    position: absolute;
+    left: 50px;
+  }
+  
+  .email-add p {
+    font-size: 2.5rem;
+  }
+  
+  .phone-no {
+    grid-column: 2/6;
+    grid-row: 2/3;
+    align-self: center;
+    position: absolute;
+    left: 50px;
+  }
+  
+  .phone-no p {
+    font-size: 2.5rem;
+  }
+  
+  .email-icon {
+    grid-column: 1/2;
+    grid-row: 1/2;
+    width: 35px;
+    height: 35px;
+    align-self: flex-end;
+    justify-self: flex-end;
+  }
+  
+  .email-icon svg {
+    width: 100%;
+    height: 100%;
+  }
+  
+  .phone-icon {
+    grid-column: 1/2;
+    grid-row: 2/ 3;
+    width: 35px;
+    height: 35px;
+    align-self: center;
+    justify-self: flex-end;
+  }
+  
+  .phone-icon svg {
+    width: 100%;
+    height: 100%;
+  }
+  
+  .contact-me-back {
+    grid-column: 11/13;
+    grid-row: 10/12;
+    transform: rotateY(180deg);
+  }
+  
+  .contact-me-back svg {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+@media screen and (min-width: 3441px) and (max-width: 3840px) {
+
+  .contact-me-message {
+    grid-column: 3/7;
+    grid-row: 3/8;
+    font-family: neuehassLight;
+    font-size: 13.5rem;
+    line-height: 1.1;
+    // background-color: red;
+  }
+  
+  .contact-me-letsTalk {
+    grid-column: 5/7;
+    grid-row: 8/9;
+    margin-top: -25px;    
+    align-self: flex-start;
+    justify-self: flex-end;
+    // background-color: red;
+  }
+  
+  .contact-me-letsTalk p {
+    font-size: neuehassBold;
+    font-weight: bold;
+    color: #fca51e;
+    font-size: 8rem;
+  }
+  
+  .contact-me-boldArrow {
+    grid-column: 7/8;
+    grid-row: 8/9;
+    width: 120px;
+    height: 120px;
+    margin-left: 25px;
+    // justify-self: center;
+    // background-color: red;
+  }
+
+  .contact-me-boldArrow svg {
+    width: 100%;
+    height: 100%;
+  }
+  
+  .contact-me-behence {
+    grid-column: 9 / 10;
+    grid-row: 8 / 9;
+    width: 160px;
+    height: 130px;
+    justify-self: flex-end;
+    align-self: flex-end;
+    position: absolute;
+    // left: 45px;
+    // background-color: red;
+  }
+  
+  .contact-me-behence svg {
+    width: 100%;
+    height: 100%;
+  }
+  
+  .contact-me-insta {
+    grid-column: 10/11;
+    grid-row: 8/9;
+    width: 150px;
+    height: 120px;
+    align-self: flex-end;
+    justify-self: center;
+    position: absolute;
+    left: 10px;
+    // background-color: green;
+
+  }
+  
+  .contact-me-insta svg {
+    width: 100%;
+    height: 100%;
+  }
+  
+  .contact-me-messageBox {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-column: 9/11;
+    grid-row: 9/10;
+    // background-color: red;
+    position: relative;
+  }
+  
+  .email-add {
+    grid-row: 1/2;
+    grid-column: 2/6;
+    align-self: flex-end;
+    justify-self: flex-start;
+    position: absolute;
+    left: 50px;
+  }
+  
+  .email-add p {
+    font-size: 3.1rem;
+  }
+  
+  .phone-no {
+    grid-column: 2/6;
+    grid-row: 2/3;
+    align-self: center;
+    position: absolute;
+    left: 50px;
+  }
+  
+  .phone-no p {
+    font-size: 3.1rem;
+  }
+  
+  .email-icon {
+    grid-column: 1/2;
+    grid-row: 1/2;
+    width: 40px;
+    height: 40px;
+    align-self: flex-end;
+    justify-self: flex-end;
+  }
+  
+  .email-icon svg {
+    width: 100%;
+    height: 100%;
+  }
+  
+  .phone-icon {
+    grid-column: 1/2;
+    grid-row: 2/ 3;
+    width: 40px;
+    height: 40px;
+    align-self: center;
+    justify-self: flex-end;
+  }
+  
+  .phone-icon svg {
+    width: 100%;
+    height: 100%;
+  }
+  
+  .contact-me-back {
+    grid-column: 11/13;
+    grid-row: 10/12;
+    transform: rotateY(180deg);
+  }
+  
+  .contact-me-back svg {
+    width: 100%;
+    height: 100%;
+  }
+}
