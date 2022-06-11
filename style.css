@@ -35,11 +35,21 @@ html {
   grid-template-columns: repeat(12, 1fr);
   grid-template-rows: repeat(12, 1fr);
   position: relative;
-  overflow-x: scroll;
+  overflow-x: hidden;
   overflow-y: hidden;
-  transition: all 0.5s ease;
-  scroll-behavior: smooth;
-  scroll-snap-type: x proximity; }
+  transition: all 0.5s ease; }
+
+.home-box.slide {
+  transition: transform 1s ease; }
+
+.work-selected.slide {
+  transition: transform 1s ease; }
+
+.about-box.slide {
+  transition: transform 1s ease; }
+
+.contact-me.slide {
+  transition: transform 1s ease; }
 
 ::-webkit-scrollbar {
   width: 5px; }

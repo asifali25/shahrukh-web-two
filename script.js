@@ -38,17 +38,42 @@ aboutNextArrow.addEventListener("click", nextSlide);
 
 //
 
-slider.addEventListener("wheel", function (e) {
-  e.preventDefault();
+let cursl = 0;
+const slideLen = slides.length
 
-  slides.forEach((slide) => {
-    slipos = parseInt(slide.getBoundingClientRect().left / 1000);
-  });
+slider.addEventListener("wheel", function (e){
+  e.preventDefault()
+ 
+   // slider.scrollBy({
+   //   left: e.deltaY < 0 ? -500 : 500,
+   //   behavior: "smooth",
+   // }); 
+   
+   cursl++
+   
+   if(cursl === slideLen) {
+     cursl = 0
+   }
+   
+   if(e.deltaY > 0) {
+     slides.forEach((slide, index) => {
+       slide.style.transform = `translateX(${106 * (index - cursl)}%)`
+     })
+     console.log('cursor down')     
+   }  
+ });
 
-  slider.scrollBy({
-    left: e.deltaY < 0 ? -500 : 500,
-    behavior: "smooth",
-  });
+// slider.addEventListener("wheel", function (e) {
+//   e.preventDefault();
+
+//   slides.forEach((slide) => {
+//     slipos = parseInt(slide.getBoundingClientRect().left / 1000);
+//   });
+
+//   slider.scrollBy({
+//     left: e.deltaY < 0 ? -500 : 500,
+//     behavior: "smooth",
+//   });
 
   // slides.forEach((slide) => {
   //   const val = (slide.getBoundingClientRect().left / 100) * 6;
@@ -59,7 +84,7 @@ slider.addEventListener("wheel", function (e) {
   //     rotate.style.transform = `rotate(${val}deg)`;
   //   }
   // });
-});
+// });
 
 const navbar = document.querySelectorAll(".href");
 const logo = document.querySelector(".logo");
