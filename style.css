@@ -35,7 +35,7 @@ html {
   grid-template-columns: repeat(12, 1fr);
   grid-template-rows: repeat(12, 1fr);
   position: relative;
-  overflow-x: hidden;
+  overflow-x: scroll;
   overflow-y: hidden;
   transition: all 0.5s ease; }
 
@@ -51,8 +51,14 @@ html {
 .contact-me.slide {
   transition: transform 1s ease; }
 
+html {
+  scroll-behavior: smooth; }
+
 ::-webkit-scrollbar {
   width: 5px; }
+
+::-webkit-scrollbar-thumb {
+  background: red; }
 
 .home-noise {
   opacity: 0.1;

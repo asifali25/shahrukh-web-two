@@ -39,29 +39,39 @@ aboutNextArrow.addEventListener("click", nextSlide);
 //
 
 let cursl = 0;
-const slideLen = slides.length
+const slideLen = slides.length;
 
-slider.addEventListener("wheel", function (e){
-  e.preventDefault()
- 
-   // slider.scrollBy({
-   //   left: e.deltaY < 0 ? -500 : 500,
-   //   behavior: "smooth",
-   // }); 
+function gotwoSlide(mySlide) {
+  slides.forEach((slide, index) => {
+    slide.style.transform = `translateX(${106 * (index - mySlide)}%)`;
+  });
+}
+
+
+
+slider.addEventListener("wheel", function (e) {
+  e.preventDefault();
+
+  // slider.scrollBy({
+  //   left: e.deltaY < 0 ? -500 : 500,
+  //   behavior: "smooth",
+  // });
+
+  // cursl++;
+  // if (cursl === slideLen) {
+  //   cursl = 0;
+  // }  
+
+
+  // gotwoSlide(0)
+
+  // if (e.deltaY > 0) {
    
-   cursl++
-   
-   if(cursl === slideLen) {
-     cursl = 0
-   }
-   
-   if(e.deltaY > 0) {
-     slides.forEach((slide, index) => {
-       slide.style.transform = `translateX(${106 * (index - cursl)}%)`
-     })
-     console.log('cursor down')     
-   }  
- });
+  //   gotwoSlide(cursl)
+  // }
+
+  // console.log(cursl)
+// });
 
 // slider.addEventListener("wheel", function (e) {
 //   e.preventDefault();
@@ -70,21 +80,21 @@ slider.addEventListener("wheel", function (e){
 //     slipos = parseInt(slide.getBoundingClientRect().left / 1000);
 //   });
 
-//   slider.scrollBy({
-//     left: e.deltaY < 0 ? -500 : 500,
-//     behavior: "smooth",
-//   });
+  slider.scrollBy({
+    left: e.deltaY < 0 ? -500 : 500,
+    behavior: "smooth",
+  });
 
-  // slides.forEach((slide) => {
-  //   const val = (slide.getBoundingClientRect().left / 100) * 6;
-  //   const val2 = val / 19;
-  //   const homesize = home.offsetWidth / 4;
+// slides.forEach((slide) => {
+//   const val = (slide.getBoundingClientRect().left / 100) * 6;
+//   const val2 = val / 19;
+//   const homesize = home.offsetWidth / 4;
 
-  //   if (val < homesize) {
-  //     rotate.style.transform = `rotate(${val}deg)`;
-  //   }
-  // });
+//   if (val < homesize) {
+//     rotate.style.transform = `rotate(${val}deg)`;
+//   }
 // });
+});
 
 const navbar = document.querySelectorAll(".href");
 const logo = document.querySelector(".logo");
