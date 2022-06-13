@@ -52,16 +52,15 @@ function gotwoSlide(mySlide) {
 slider.addEventListener("wheel", function (e) {
   e.preventDefault();
 
-  // slider.scrollBy({
-  //   left: e.deltaY < 0 ? -500 : 500,
-  //   behavior: "smooth",
-  // });
+  slider.scrollBy({
+    left: e.deltaY < 0 ? -500 : 500,
+    behavior: "smooth",
+  });
 
   // cursl++;
   // if (cursl === slideLen) {
   //   cursl = 0;
-  // }  
-
+  // }   
 
   // gotwoSlide(0)
 
@@ -80,10 +79,10 @@ slider.addEventListener("wheel", function (e) {
 //     slipos = parseInt(slide.getBoundingClientRect().left / 1000);
 //   });
 
-  slider.scrollBy({
-    left: e.deltaY < 0 ? -500 : 500,
-    behavior: "smooth",
-  });
+  // slider.scrollBy({
+  //   left: e.deltaY < 0 ? -500 : 500,
+  //   behavior: "smooth",
+  // });
 
 // slides.forEach((slide) => {
 //   const val = (slide.getBoundingClientRect().left / 100) * 6;

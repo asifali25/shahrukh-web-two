@@ -37,6 +37,7 @@ html {
   position: relative;
   overflow-x: scroll;
   overflow-y: hidden;
+  scroll-snap-type: x proximity;
   transition: all 0.5s ease; }
 
 .home-box.slide {
