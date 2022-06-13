@@ -57,9 +57,6 @@ html {
 ::-webkit-scrollbar {
   width: 5px; }
 
-::-webkit-scrollbar-thumb {
-  background: red; }
-
 .home-noise {
   opacity: 0.1;
   width: 100%;
